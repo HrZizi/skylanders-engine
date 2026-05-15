@@ -1,0 +1,117 @@
+﻿{
+    "source":  "https://skylanders.fandom.com/wiki/Elements",
+    "api":  "https://skylanders.fandom.com/api.php",
+    "downloadedAt":  "2026-05-14T11:33:27.5769362Z",
+    "entries":  [
+                    {
+                        "element":  "air",
+                        "requestedTitle":  "File:AirSymbolSkylanders.png",
+                        "resolvedTitle":  "File:AirSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/f/f3/AirSymbolSkylanders.png/revision/latest?cb=20160925223423",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:AirSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/air.png",
+                        "sha256":  "29408e92c5cbe0464f8051aef292db76d49a887b33f8abd52a4afa10f78047fd"
+                    },
+                    {
+                        "element":  "dark",
+                        "requestedTitle":  "File:DarkSymbolSkylanders.png",
+                        "resolvedTitle":  "File:DarkSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/9/98/DarkSymbolSkylanders.png/revision/latest?cb=20160925223430",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:DarkSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/dark.png",
+                        "sha256":  "0a88b6955e93fcd40106574631ffa5a4e85040664fe4638e8f495cd5894404fd"
+                    },
+                    {
+                        "element":  "earth",
+                        "requestedTitle":  "File:EarthSymbolSkylanders.png",
+                        "resolvedTitle":  "File:EarthSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/f/f8/EarthSymbolSkylanders.png/revision/latest?cb=20160925223434",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:EarthSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/earth.png",
+                        "sha256":  "ab59af22e648a134f3afe94387f3fdf72ddc84d54017eef4fc23759ed8a8c14e"
+                    },
+                    {
+                        "element":  "fire",
+                        "requestedTitle":  "File:FireSymbolSkylanders.png",
+                        "resolvedTitle":  "File:FireSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/9/9c/FireSymbolSkylanders.png/revision/latest?cb=20160925223439",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:FireSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/fire.png",
+                        "sha256":  "9d0c505ac9a152b3e131c0ea8161060c080f7364fd3fbe06cc8e99f59b1a66d4"
+                    },
+                    {
+                        "element":  "life",
+                        "requestedTitle":  "File:LifeSymbolSkylanders.png",
+                        "resolvedTitle":  "File:LifeSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/e/ee/LifeSymbolSkylanders.png/revision/latest?cb=20160925223443",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:LifeSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/life.png",
+                        "sha256":  "021d3ce15e5965aad5ca8d86196d4c4340794932b94794dd9bab50f70584eb31"
+                    },
+                    {
+                        "element":  "light",
+                        "requestedTitle":  "File:LightSymbolSkylanders.png",
+                        "resolvedTitle":  "File:LightSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/c/cd/LightSymbolSkylanders.png/revision/latest?cb=20160925223446",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:LightSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/light.png",
+                        "sha256":  "2520803b1ade5c4b5789bb8fa6e828e384871e82caa2c2e8ef9c0b7345ec5a52"
+                    },
+                    {
+                        "element":  "magic",
+                        "requestedTitle":  "File:MagicSymbolSkylanders.png",
+                        "resolvedTitle":  "File:MagicSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/7/72/MagicSymbolSkylanders.png/revision/latest?cb=20160925223451",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:MagicSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/magic.png",
+                        "sha256":  "38d1342797efd1364ded96cdd8dcf50366cdc9f4526decd738404d1d394ef988"
+                    },
+                    {
+                        "element":  "tech",
+                        "requestedTitle":  "File:TechSymbolSkylanders.png",
+                        "resolvedTitle":  "File:TechSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/d/d7/TechSymbolSkylanders.png/revision/latest?cb=20160925223504",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:TechSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/tech.png",
+                        "sha256":  "1918b9239aa953ef583cb7a0b1b2930b75fdb94d2345dfd81013c49ac0f700ac"
+                    },
+                    {
+                        "element":  "undead",
+                        "requestedTitle":  "File:UndeadSymbolSkylanders.png",
+                        "resolvedTitle":  "File:UndeadSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/1/18/UndeadSymbolSkylanders.png/revision/latest?cb=20160925223508",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:UndeadSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/undead.png",
+                        "sha256":  "b56279ccdfbec720f261e45f4ad9d52e83125d805d27378014fd5256fb572bfb"
+                    },
+                    {
+                        "element":  "water",
+                        "requestedTitle":  "File:WaterSymbolSkylanders.png",
+                        "resolvedTitle":  "File:WaterSymbolSkylanders.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/4/4f/WaterSymbolSkylanders.png/revision/latest?cb=20160925223512",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:WaterSymbolSkylanders.png",
+                        "localPath":  "assets/elements/_review/water.png",
+                        "sha256":  "fa28ca96362111645ae52f086a7f5b13d779af353c513014d5fbd6b3c843096d"
+                    },
+                    {
+                        "element":  "kaos",
+                        "requestedTitle":  "File:Kaos symbol.png",
+                        "resolvedTitle":  "File:Kaos symbol.png",
+                        "status":  "candidate_downloaded",
+                        "imageUrl":  "https://static.wikia.nocookie.net/skylanders/images/a/ab/Kaos_symbol.png/revision/latest?cb=20160913222102",
+                        "descriptionUrl":  "https://skylanders.fandom.com/wiki/File:Kaos_symbol.png",
+                        "localPath":  "assets/elements/_review/kaos.png",
+                        "sha256":  "0046dd3e0e6190e5b0f05d11e39dc3460e785cbc242f03ba3d8a6e11034d3efc"
+                    }
+                ]
+}

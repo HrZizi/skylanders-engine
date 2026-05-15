@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skylanders Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img class="scene-background" src="backgrounds/green-portal.png" alt="">
+  <main class="overlay-shell">
+    <section id="selectorView" class="view selector-view">
+      <header class="hud-top">
+        <div class="top-center">
+          <div class="game-rotator" aria-label="Game selection">
+            <button id="prevGame" class="game-arrow left" title="Previous game" aria-label="Previous game"></button>
+            <button id="currentGame" class="game-logo-button" title="Current game" aria-label="Current game">
+              <img id="gameLogo" alt="">
+              <span id="gameLogoFallback">Giants</span>
+            </button>
+            <button id="nextGame" class="game-arrow right" title="Next game" aria-label="Next game"></button>
+          </div>
+          <div class="category-switcher" id="categorySwitcher" aria-label="Toy category">
+            <button class="category-button active" data-toy-kind="Skylander">Skylanders</button>
+            <button class="category-button" data-toy-kind="Item">Items</button>
+            <button class="category-button" data-toy-kind="Trap">Traps</button>
+            <button class="category-button" data-toy-kind="Vehicle">Vehicles</button>
+            <button class="category-button" data-toy-kind="Trophy">Trophies</button>
+          </div>
+        </div>
+        <button id="mappingButton" class="icon-button controls-button" title="Controller mapping" aria-label="Controller mapping">Controls</button>
+      </header>
+
+      <aside class="portal-rail" aria-label="Portal slots">
+        <div class="portal-strip">
+          <button class="portal-slot active" data-slot="0">
+            <span>1</span>
+            <strong id="slot0">Empty</strong>
+            <img class="slot-element hidden" id="slotElement0" alt="">
+          </button>
+          <button class="portal-slot" data-slot="1">
+            <span>2</span>
+            <strong id="slot1">Empty</strong>
+            <img class="slot-element hidden" id="slotElement1" alt="">
+          </button>
+          <button class="portal-slot" data-slot="2">
+            <span>3</span>
+            <strong id="slot2">Empty</strong>
+            <img class="slot-element hidden" id="slotElement2" alt="">
+          </button>
+          <button class="portal-slot" data-slot="3">
+            <span>4</span>
+            <strong id="slot3">Empty</strong>
+            <img class="slot-element hidden" id="slotElement3" alt="">
+          </button>
+        </div>
+        <button id="clearSlotButton" class="clear-slot" title="Clear active slot">Clear</button>
+      </aside>
+
+      <section class="stage">
+        <section class="character-stage" aria-live="polite">
+          <div class="render-wrap">
+            <img id="characterRender" alt="">
+            <div id="renderFallback" class="render-fallback"></div>
+          </div>
+          <button id="placeButton" class="place-button">Place</button>
+        </section>
+
+        <aside class="info-panel">
+          <h1 id="characterName">Skylander</h1>
+          <div class="level-line">
+            <span>Lvl</span>
+            <strong>1</strong>
+            <div></div>
+            <em>Next</em>
+          </div>
+          <dl>
+            <div>
+              <dt>Element</dt>
+              <dd class="element-value">
+                <img id="characterElementIcon" class="element-icon hidden" alt="">
+                <span id="characterElement">-</span>
+              </dd>
+            </div>
+            <div><dt>Type</dt><dd id="characterRole">-</dd></div>
+            <div><dt>ID</dt><dd id="characterIds">-</dd></div>
+            <div><dt>Source</dt><dd id="characterSource">SCL</dd></div>
+          </dl>
+          <p id="statusText">Portal idle</p>
+          <div class="diagnostics-panel">
+            <span id="graphicPackStatus">Graphic packs not checked</span>
+            <button id="updateGraphicPacksButton" type="button">Update Graphic Packs</button>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="wheel-shell" aria-label="Character selection">
+        <button id="prevCharacter" class="wheel-arrow left" title="Previous character" aria-label="Previous character"></button>
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carousel"></div>
+        </div>
+        <button id="nextCharacter" class="wheel-arrow right" title="Next character" aria-label="Next character"></button>
+      </footer>
+    </section>
+
+    <section id="mappingView" class="view mapping-view hidden">
+      <header class="hud-top">
+        <button id="backToSelector" class="icon-button" title="Back" aria-label="Back">Back</button>
+        <h2>Controller Mapping</h2>
+        <span class="mapping-save-state" id="mappingSaveState">Autosaved</span>
+      </header>
+      <section class="mapping-layout">
+        <div class="mapping-toolbar">
+          <div class="player-tabs" role="tablist" aria-label="Player">
+            <button class="player-tab active" data-player="1">Player 1</button>
+            <button class="player-tab" data-player="2">Player 2</button>
+          </div>
+          <label class="device-picker">
+            <span>Input Device</span>
+            <select id="deviceSelect"></select>
+          </label>
+          <button id="refreshDevices" class="mapping-command">Refresh Devices</button>
+          <button id="resetMapping" class="mapping-command">Reset Player</button>
+          <p id="mappingStatus">Controller mapping requires the bundled Cemu build.</p>
+        </div>
+
+        <section class="mapping-list-panel" aria-label="Mapped controls">
+          <div id="mappingList" class="mapping-list"></div>
+        </section>
+
+        <section class="mapping-footer">
+          <div class="overlay-toggle-panel">
+            <h3>Overlay Toggle</h3>
+            <p id="overlayToggleText">F1 is always active. XInput supports combos; SDL/DirectInput devices use a single captured button.</p>
+            <div id="overlayToggleList" class="overlay-toggle-list"></div>
+          </div>
+          <div class="toggle-actions">
+            <button id="addKeyboardToggle" class="mapping-command">Add Keyboard Toggle</button>
+            <button id="addControllerToggle" class="mapping-command">Add Controller Toggle</button>
+          </div>
+          <details class="advanced-mapping">
+            <summary>Stick Settings</summary>
+            <label>Deadzone <input id="stickDeadzone" type="number" min="0" max="0.9" step="0.05" value="0.25"></label>
+            <label>Range <input id="stickRange" type="number" min="0.1" max="2" step="0.05" value="1"></label>
+          </details>
+        </section>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

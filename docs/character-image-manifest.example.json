@@ -1,0 +1,16 @@
+{
+  "source": "https://skylanderscharacterlist.com/",
+  "excludedCategories": [
+    "In-Game Variants",
+    "Chase Variants"
+  ],
+  "entries": [
+    {
+      "characterId": "spyro",
+      "sourceUrl": "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+      "imageUrl": "",
+      "sha256": "",
+      "downloadedAt": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+    "catalogSource":  "docs/cemu-skylanders-catalog.json",
+    "sourceRoot":  "assets/characters/renders/_review/Downloads",
+    "outputRoot":  "assets/characters/renders/_review",
+    "generatedAt":  "2026-05-14T19:36:12.2740302Z",
+    "dryRun":  false,
+    "scannedCount":  0,
+    "assignedCount":  0,
+    "ambiguousCount":  0,
+    "unmatchedCount":  0,
+    "entries":  [
+
+                ],
+    "note":  "Source folder not found; no local render inbox files to assign."
+}

@@ -1,0 +1,1616 @@
+﻿{
+    "source":  "https://skylanderscharacterlist.com/",
+    "excludedCategories":  [
+                               "In-Game Variants",
+                               "Chase Variants"
+                           ],
+    "catalogSource":  "src/CharacterCatalog.cpp",
+    "downloadedAt":  "2026-05-13T22:01:25.8916807Z",
+    "entries":  [
+                    {
+                        "id":  "whirlwind",
+                        "displayName":  "Whirlwind",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Whirlwind2.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/whirlwind.png",
+                                               "sha256":  "07188934b652d967e78faa6a3f8ba1ff2a9f88c77289a069a38dca879e37c3d7",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "sonic_boom",
+                        "displayName":  "Sonic Boom",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/SonicBoom.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/sonic_boom.png",
+                                               "sha256":  "875ba480f8895c12db4de44951e33c7c06c1f6e8089a6e761599ab080197da83",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "warnado",
+                        "displayName":  "Warnado",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Warnado.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/warnado.png",
+                                               "sha256":  "976f0543a602f7cdd8fc8f973696afc28b43c24e84d679cfb3ae66c1cfd800dd",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "lightning_rod",
+                        "displayName":  "Lightning Rod",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/LightningRod2.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/lightning_rod.png",
+                                               "sha256":  "08bde9d852451d95d30aeea1e6a056e35726444a4f4d4a37724c30c492ccd355",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "bash",
+                        "displayName":  "Bash",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/03/Bash.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/bash.png",
+                                               "sha256":  "9ad4195e5896875beee94d2ec42782b9af548f2490153c31f44b349f162b5318",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "terrafin",
+                        "displayName":  "Terrafin",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Terrafin.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/terrafin.png",
+                                               "sha256":  "bf67a967365c088302a18b1fe2d8a721ced634b747d546f48bd604b0cb8d8083",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "dino_rang",
+                        "displayName":  "Dino-Rang",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/DinoRang.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/dino_rang.png",
+                                               "sha256":  "ba929a66b80793f2f8bccb17b069024a95bdea0ee027807c62088c3f50b85a5a",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "prism_break",
+                        "displayName":  "Prism Break",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/PrismBreak.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/prism_break.png",
+                                               "sha256":  "36ac9ba59b31ece22bd4b18710b5ee68aa33c97eeebe80a757a05680d39435c4",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "sunburn",
+                        "displayName":  "Sunburn",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Sunburn.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/sunburn.png",
+                                               "sha256":  "626986f5de6b78bc746c5ffd164cbcde6c25ae9da5870013b7399d93959d3105",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "eruptor",
+                        "displayName":  "Eruptor",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Eruptor.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/eruptor.png",
+                                               "sha256":  "54914164ddd4b29bcaa5134ec3766f1826f4141fb93427e92ce255d841679e52",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "ignitor",
+                        "displayName":  "Ignitor",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Ignitor.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/ignitor.png",
+                                               "sha256":  "927647e36c6d055c23c8685481e6e95b04b1e0b6db79690547d8538bf0d4b6cf",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "flameslinger",
+                        "displayName":  "Flameslinger",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Flameslinger.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/flameslinger.png",
+                                               "sha256":  "cdf0c62febfef6b1c60b1283ee9f5ed7c2b95e22b9e071a27637c71134299790",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "zap",
+                        "displayName":  "Zap",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Zap.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/zap.png",
+                                               "sha256":  "d7f82fab75ea980773fd871aa2098e64bf0a805eef510de69cf402307c8d127f",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "wham_shell",
+                        "displayName":  "Wham-Shell",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/WhamShell.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/wham_shell.png",
+                                               "sha256":  "ab28ab38d1d2d0b95ba9eb7cc2304c8b4bf3dc572c05188ccd869ee4097c8da4",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "gill_grunt",
+                        "displayName":  "Gill Grunt",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/GillGrunt.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/gill_grunt.png",
+                                               "sha256":  "59c1bbfb88cff1d531920abac92f532cdd606544dedda3d04ea3d209c5b8326b",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "slam_bam",
+                        "displayName":  "Slam Bam",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/SlamBam.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/slam_bam.png",
+                                               "sha256":  "1ff6ee755a8804613a171a589bbf9a7db1310b967004ea4d423832277aaaed1c",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "spyro",
+                        "displayName":  "Spyro",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Spyro1.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/spyro.png",
+                                               "sha256":  "a3326939eef241d94cf43a2bc73bddfca631747a7a3ae36a47842ab6a9af9029",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "voodood",
+                        "displayName":  "Voodood",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Voodood.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/voodood.png",
+                                               "sha256":  "3f8daee5acac82fe4a4e842163675d8520cbd25c51edd753d28a239eb9935b1c",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "double_trouble",
+                        "displayName":  "Double Trouble",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/DoubleTrouble.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/double_trouble.png",
+                                               "sha256":  "c810110e22fa5ba01441cca87b6f8e2c9b3940cb0c5e5bc89db622f7261c2c6c",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "trigger_happy",
+                        "displayName":  "Trigger Happy",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/TriggerHappy2.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/trigger_happy.png",
+                                               "sha256":  "84106719673429e059a66992c5371644a9c889822db5ae594eb133382e89e26b",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "drobot",
+                        "displayName":  "Drobot",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Drobot.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/drobot.png",
+                                               "sha256":  "ef76939a7ea4756ede341eafc2d28740f9d66e62fded18f838f64edbe1f11934",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "drill_sergeant",
+                        "displayName":  "Drill Sergeant",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/DrillSergeant2.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/drill_sergeant.png",
+                                               "sha256":  "1578ed32b968da2606b04f3547c79dc409e3270a762a899c461b541e950f8162",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "boomer",
+                        "displayName":  "Boomer",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Boomer1.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/boomer.png",
+                                               "sha256":  "123e6ab8ae8bff5e3dd7609e57720de05df512682fb959207c492d25a1bdba56",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "wrecking_ball",
+                        "displayName":  "Wrecking Ball",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/02/WreckingBall.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/wrecking_ball.png",
+                                               "sha256":  "f19f0e79c85623b9c18169e1898de65c3d3f470aa9fc872ae790230bf2b32bc6",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "camo",
+                        "displayName":  "Camo",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/02/Camo.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/camo.png",
+                                               "sha256":  "9cc806f8ed8908d4ac4c2d8ba8da8df6d89d77593794b98cc3e2f66e99876947",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "zook",
+                        "displayName":  "Zook",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Zook.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/zook.png",
+                                               "sha256":  "3e4a20d5c88249a3fa208b2db367e071b8b699e595b86f8646e7e6eaca2c842a",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "stealth_elf",
+                        "displayName":  "Stealth Elf",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/08/StealthElf.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/stealth_elf.png",
+                                               "sha256":  "a840c3732329dd797e9b52db6f9a19dbb3e99e55160f4a1cbb2e9a82882d6a35",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "stump_smash",
+                        "displayName":  "Stump Smash",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/StumpSmash.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/stump_smash.png",
+                                               "sha256":  "8958ae2e05afcf9ae7a2667fcb5f60bc0def31f13fc14bef5a43e6b03f8c716f",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "hex",
+                        "displayName":  "Hex",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/02/Hex.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/hex.png",
+                                               "sha256":  "fc67c8b2715d8f2316f0b503e5e633d3352730f597e22af6842d8b2bc90ab7d5",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "chop_chop",
+                        "displayName":  "Chop Chop",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/ChopChop1.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/chop_chop.png",
+                                               "sha256":  "1d9454afbffbf04f63bcd75e837ed94a9a98662c863d0de7f3752fd834851af9",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "ghost_roaster",
+                        "displayName":  "Ghost Roaster",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/GhostRoaster.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/ghost_roaster.png",
+                                               "sha256":  "1b7a33433faa1f342d61f5100e972f9b70735ce67ac4a5bca9f0105b103d9c08",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "cynder",
+                        "displayName":  "Cynder",
+                        "game":  "SpyrosAdventure",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/spyros-adventure-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/02/Cynder.png",
+                                               "localPath":  "assets/characters/renders/_review/SpyrosAdventure/cynder.png",
+                                               "sha256":  "0ce50853b6c41e3e8d80ef3516dbdf3311941c169fa7d3c975281f9251e9a1eb",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "jet_vac",
+                        "displayName":  "Jet-Vac",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/JetVac.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/jet_vac.png",
+                                               "sha256":  "65416824a30232498f66ceaf60c1af4ff948dbbef1b463f74019e3fef683868f",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "swarm",
+                        "displayName":  "Swarm",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Swarm.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/swarm.png",
+                                               "sha256":  "7867cbd0076e0db968e1747a4167765e998a95063663046b1c30d5f41630174d",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "crusher",
+                        "displayName":  "Crusher",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Crusher.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/crusher.png",
+                                               "sha256":  "aa77377f3e995bb475b9a3bf8d9e30cf46fc68fcf29fb8b8792500129b5b78b4",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "flashwing",
+                        "displayName":  "Flashwing",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Flashwing.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/flashwing.png",
+                                               "sha256":  "b8aa993cec659591659273954904cf703e9b3062fc9b9c50f31afad361b1b81f",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "hot_head",
+                        "displayName":  "Hot Head",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/02/HotHead.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/hot_head.png",
+                                               "sha256":  "dd27519bd8e7a4a243cfdd78c265e3246abbc54b2ddd163bdda46b5088756db1",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "hot_dog",
+                        "displayName":  "Hot Dog",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/HotDog.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/hot_dog.png",
+                                               "sha256":  "2268867dd6220282d7e479784e0d141d78aae5d2ee9f5b1afaa72be5f7e23ab9",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "chill",
+                        "displayName":  "Chill",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Chill.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/chill.png",
+                                               "sha256":  "7d4489e00164322af199ba95baf730c5d4e092b6c36a29abe7efc8bd7ce4d9e8",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "thumpback",
+                        "displayName":  "Thumpback",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Thumpback.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/thumpback.png",
+                                               "sha256":  "ccd15b2e019122f69ef3d031578ec8edf67958e3905c1c85064591d4a44f32b3",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "pop_fizz",
+                        "displayName":  "Pop Fizz",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/PopFizz.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/pop_fizz.png",
+                                               "sha256":  "8f9dbbde0600d835ecb049cb869a22a6bd66d178ae5ea0510bb49a82b57704b1",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "ninjini",
+                        "displayName":  "Ninjini",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Ninjini.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/ninjini.png",
+                                               "sha256":  "cbff91eb94763eb9b58e3390130410cb14cdad78d96242777734a552fc834226",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "bouncer",
+                        "displayName":  "Bouncer",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Bouncer.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/bouncer.png",
+                                               "sha256":  "994e719eb5512d3b3b831f98f67e1737b045a242aff4c42b12b9a881d75379b2",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "sprocket",
+                        "displayName":  "Sprocket",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Sprocket.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/sprocket.png",
+                                               "sha256":  "7fd1a3a21c05b2c951393237e07f1393b28b44e6cb8f32ee95e47ee0b9e8516c",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "tree_rex",
+                        "displayName":  "Tree Rex",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/TreeRex.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/tree_rex.png",
+                                               "sha256":  "504edfefafe5bbc0780b0887d2ebd8512b3301b6cae368661b0daa88a73ef9dd",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "shroomboom",
+                        "displayName":  "Shroomboom",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/Shroomboom.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/shroomboom.png",
+                                               "sha256":  "ef918a94d0bd475f22496ac791ec09b96987302814ab0487ff51633a27151674",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "eye_brawl",
+                        "displayName":  "Eye-Brawl",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/EyeBrawl1.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/eye_brawl.png",
+                                               "sha256":  "bcfdd530e4150eb9d03ff0608a6a6aa2acbc16bed716f0254faefd9465432b9e",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "fright_rider",
+                        "displayName":  "Fright Rider",
+                        "game":  "Giants",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/giants-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/FrightRider.png",
+                                               "localPath":  "assets/characters/renders/_review/Giants/fright_rider.png",
+                                               "sha256":  "9ac5916bfee44764b6101ec1542fef2356bd38504edf39b7e72507634755043d",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "blast_zone_top",
+                        "displayName":  "Blast Zone - Top",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/06/BlastZone.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/blast_zone_top.png",
+                                               "sha256":  "d85d1bd0ac3a3f63b50b8d38e206271becf4da4f1a6c113e79366c3fda3141c9",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "blast_zone_bottom",
+                        "displayName":  "Blast Zone - Bottom",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/06/BlastZone.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/blast_zone_bottom.png",
+                                               "sha256":  "d85d1bd0ac3a3f63b50b8d38e206271becf4da4f1a6c113e79366c3fda3141c9",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "wash_buckler_top",
+                        "displayName":  "Wash Buckler - Top",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/WashBuckler.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/wash_buckler_top.png",
+                                               "sha256":  "9a4238f38003417113b20849bc9cb0f377e07b32b96a9c5d018ae4b37af27811",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "wash_buckler_bottom",
+                        "displayName":  "Wash Buckler - Bottom",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/02/WashBuckler.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/wash_buckler_bottom.png",
+                                               "sha256":  "9a4238f38003417113b20849bc9cb0f377e07b32b96a9c5d018ae4b37af27811",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "free_ranger_top",
+                        "displayName":  "Free Ranger - Top",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/06/FreeRanger.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/free_ranger_top.png",
+                                               "sha256":  "a19e413cb1336651889bf480bbaeb646a6580f9a6a4e2b966bd40c05dc8c1f2f",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "free_ranger_bottom",
+                        "displayName":  "Free Ranger - Bottom",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/06/FreeRanger.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/free_ranger_bottom.png",
+                                               "sha256":  "a19e413cb1336651889bf480bbaeb646a6580f9a6a4e2b966bd40c05dc8c1f2f",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "rubble_rouser_top",
+                        "displayName":  "Rubble Rouser - Top",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/12/RubbleRouser1.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/rubble_rouser_top.png",
+                                               "sha256":  "e2e9b280d614da5bbc1d6d5269a5a2c1edc2b50785db38b70d6c0c1a85362139",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "rubble_rouser_bottom",
+                        "displayName":  "Rubble Rouser - Bottom",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/12/RubbleRouser1.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/rubble_rouser_bottom.png",
+                                               "sha256":  "e2e9b280d614da5bbc1d6d5269a5a2c1edc2b50785db38b70d6c0c1a85362139",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "stink_bomb_top",
+                        "displayName":  "Stink Bomb - Top",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/12/StinkBomb.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/stink_bomb_top.png",
+                                               "sha256":  "ca08e8d550a84d54dbeb7e2f3404b49280619d26a18faeee4323a09de105c2e1",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "stink_bomb_bottom",
+                        "displayName":  "Stink Bomb - Bottom",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/12/StinkBomb.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/stink_bomb_bottom.png",
+                                               "sha256":  "ca08e8d550a84d54dbeb7e2f3404b49280619d26a18faeee4323a09de105c2e1",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "hoot_loop_top",
+                        "displayName":  "Hoot Loop - Top",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/06/HootLoop.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/hoot_loop_top.png",
+                                               "sha256":  "d54e8ec0c105dfbfbcd75b519b0b0db2afb2ce8a3152f7967e07ffd5a4567025",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "hoot_loop_bottom",
+                        "displayName":  "Hoot Loop - Bottom",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/06/HootLoop.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/hoot_loop_bottom.png",
+                                               "sha256":  "d54e8ec0c105dfbfbcd75b519b0b0db2afb2ce8a3152f7967e07ffd5a4567025",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "magna_charge_top",
+                        "displayName":  "Magna Charge - Top",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/08/MagnaCharge.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/magna_charge_top.png",
+                                               "sha256":  "abaca62b238e650d20adc877ca74b8602675a9db900f4ba1bd33b0247e058c0b",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "magna_charge_bottom",
+                        "displayName":  "Magna Charge - Bottom",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/08/MagnaCharge.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/magna_charge_bottom.png",
+                                               "sha256":  "abaca62b238e650d20adc877ca74b8602675a9db900f4ba1bd33b0247e058c0b",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "night_shift_top",
+                        "displayName":  "Night Shift - Top",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/08/NightShift.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/night_shift_top.png",
+                                               "sha256":  "142ca81af10498de5e88e074b8feb06775c66557ba1ba572978baf029c9750cc",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "night_shift_bottom",
+                        "displayName":  "Night Shift - Bottom",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/08/NightShift.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/night_shift_bottom.png",
+                                               "sha256":  "142ca81af10498de5e88e074b8feb06775c66557ba1ba572978baf029c9750cc",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "scratch",
+                        "displayName":  "Scratch",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/10/Scratch.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/scratch.png",
+                                               "sha256":  "85073831f515c18e4a00b2c21f6dc65ddf41cec7e20425cc19c7988dfa554a34",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "pop_thorn",
+                        "displayName":  "Pop Thorn",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/12/Popthorn.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/pop_thorn.png",
+                                               "sha256":  "6d1e10c8805e3795a7804a1e9190e3c88fb249b08e9146cb94bb732a9fe951e2",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "smolderdash",
+                        "displayName":  "Smolderdash",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/12/Smolderdash.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/smolderdash.png",
+                                               "sha256":  "e0a15974bc7dd61e40c5629c61497cb15a7a1a3f6690040b8b50ef0c0307b9bb",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "bumble_blast",
+                        "displayName":  "Bumble Blast",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/12/BumbleBlast.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/bumble_blast.png",
+                                               "sha256":  "17eb5d06d1107ccb77cf6275f778883ea8251e76fd088a0fe535421967b7aefc",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "roller_brawl",
+                        "displayName":  "Roller Brawl",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/06/RollerBrawl.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/roller_brawl.png",
+                                               "sha256":  "774bfe9bb657f207552f196744a039c377542fe781a589bbb8999451257ff29d",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "punk_shock",
+                        "displayName":  "Punk Shock",
+                        "game":  "SwapForce",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/swap-force-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2013/11/PunkShock1.png",
+                                               "localPath":  "assets/characters/renders/_review/SwapForce/punk_shock.png",
+                                               "sha256":  "5f9347cc99e9d68e0d5a0367f573f7e6489d7f66fd35673b06212752a5781158",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "gusto",
+                        "displayName":  "Gusto",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/06/Gusto1.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/gusto.png",
+                                               "sha256":  "235a77dad0b802a57b28e36518f1d750633a40c061d2361dde989e2822cbbb96",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "thunderbolt",
+                        "displayName":  "Thunderbolt",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/09/Thunderbolt.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/thunderbolt.png",
+                                               "sha256":  "47eb1e7c6b9fc92db730d5a0de445c76f993549232afce1cc188609473eb4a7a",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "wallop",
+                        "displayName":  "Wallop",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/06/Wallop.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/wallop.png",
+                                               "sha256":  "f9b31d3b79de761b66dddd1346fc160e2a05fc91aecf58e2d942bb0ffd3f8be6",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "wildfire",
+                        "displayName":  "Wildfire",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/06/WildFire.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/wildfire.png",
+                                               "sha256":  "a08a3b9e5d28b0abd94a65fd99ae49e9491fdbc2f977d337128d63636660aec2",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "snap_shot",
+                        "displayName":  "Snap Shot",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/04/SnapShot.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/snap_shot.png",
+                                               "sha256":  "1d38bb825fecf58293fb8107fbb08c3d2d571a2433408121e9c9b6724437e66e",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "lob_star",
+                        "displayName":  "Lob-Star",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/09/LobStar.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/lob_star.png",
+                                               "sha256":  "464d4a36ab176eb4b2280bc5e55af01f289a619c1a8f6a7393f14b6d4ec65494",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "blastermind",
+                        "displayName":  "Blastermind",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/09/Blastermind.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/blastermind.png",
+                                               "sha256":  "0275a7a65df0d279015d37f9e8ad5d8654fee7c3aae2844a78adb11afc27eef9",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "jawbreaker",
+                        "displayName":  "Jawbreaker",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/06/JawBreaker1.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/jawbreaker.png",
+                                               "sha256":  "5a4c2dcdc754447ce33ad3bdaf545f2d0adbeebe5fed603213708431c5b3f547",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "bushwack",
+                        "displayName":  "Bushwhack",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/08/BushWhack.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/bushwack.png",
+                                               "sha256":  "03f3b7df2cb3faf75fe1bd33aec5ba69a0c94ac04ba2d652e3b8527e5e6d2ae5",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "krypt_king",
+                        "displayName":  "Krypt King",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/06/KryptKing1.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/krypt_king.png",
+                                               "sha256":  "403695996ffb0820dd3da92f6214abe3ed15305821c8102c55830f53234c6c3c",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "knight_light",
+                        "displayName":  "Knight Light",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/10/KnightLight.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/knight_light.png",
+                                               "sha256":  "c86af37b72ebc9ec453ebf550938ccd9026456b6af4e571d86b25ca89c86a350",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "knight_mare",
+                        "displayName":  "Knight Mare",
+                        "game":  "TrapTeam",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/trap-team-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2014/10/KnightMare.png",
+                                               "localPath":  "assets/characters/renders/_review/TrapTeam/knight_mare.png",
+                                               "sha256":  "244c8f03076d99778e2069d9c343ec4e12aa466f55cff0a5239a5821da02aff4",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "spitfire",
+                        "displayName":  "Spitfire",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/06/SpitFire.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/spitfire.png",
+                                               "sha256":  "0b728d57c75ed088f40e38f62e45fd40b6db5e971b240aeb3c7cb61072337599",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "stormblade",
+                        "displayName":  "Stormblade",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/06/StormBlade.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/stormblade.png",
+                                               "sha256":  "58aab1cfaa8dbaed0186fee06fe2dac0afff1262cccf85ede2bdbee31641a60c",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "smash_hit",
+                        "displayName":  "Smash Hit",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/07/SmashHit.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/smash_hit.png",
+                                               "sha256":  "aa9a2ec17c1c1de97c94229accda15ace239c238d699982ef773c6008a5a3ecb",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "splat",
+                        "displayName":  "Splat",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/07/Splat.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/splat.png",
+                                               "sha256":  "9a2dddf7be7416ba2a65967ca5f0fa7e531515ddac55fd31123454d3841fcb60",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "fiesta",
+                        "displayName":  "Fiesta",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/06/Fiesta.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/fiesta.png",
+                                               "sha256":  "9fabe7725cc02eb44f9c64c34a8b00dc2f9b62942397efd640344747a4f52f90",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "high_volt",
+                        "displayName":  "High Volt",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/07/HighVolt.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/high_volt.png",
+                                               "sha256":  "e658aa8e8c55d9b7727d21ebed323c24ec49f09ca7eadcf14abcd053875726f6",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "dive_clops",
+                        "displayName":  "Dive-Clops",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/06/DiveClops.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/dive_clops.png",
+                                               "sha256":  "d5ceb8d46e46e77cbb64d7fc9f6490c1ba76935d63517ba39854f981c5c2160c",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "astroblast",
+                        "displayName":  "Astroblast",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/07/Astroblast.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/astroblast.png",
+                                               "sha256":  "2a0812a2d235def6b9b09b6891090e81579510abfe74d4718d511ddded053d87",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "nightfall",
+                        "displayName":  "Nightfall",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/06/Nightfall.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/nightfall.png",
+                                               "sha256":  "e8faeb2fc08585b192e3f17f46e6f4d2bc4a2752fa44b4ec4261382a5186423b",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "thrillipede",
+                        "displayName":  "Thrillipede",
+                        "game":  "SuperChargers",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/superchargers-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2015/07/Thrillipede.png",
+                                               "localPath":  "assets/characters/renders/_review/SuperChargers/thrillipede.png",
+                                               "sha256":  "b59b3905459caa1ec7b5d9fb3a973680c0ac9ba57c947439ebcac19c18793224",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "king_pen",
+                        "displayName":  "King Pen",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/05/KingPen.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/king_pen.png",
+                                               "sha256":  "5c860fed864ed68565ccbc1bd4715b697684927d111cec331a58edc50f7f1399",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "tri_tip",
+                        "displayName":  "Tri-Tip",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/05/TriTipFinal-1.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/tri_tip.png",
+                                               "sha256":  "e3bcf62b497a642d88772f21e0eb78bda127ed51eda9af170abfcd1ee58ffa48",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "chopscotch",
+                        "displayName":  "Chopscotch",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/05/ChopscotchFinal.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/chopscotch.png",
+                                               "sha256":  "86c6a2b488eab1ad4ba31aca8171a4df05c2bc1535a5af81206f016ab161565f",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "boom_bloom",
+                        "displayName":  "Boom Bloom",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/11/BoomBloom.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/boom_bloom.png",
+                                               "sha256":  "1df6fb599cd19585565edc053292ca1f16a4dc1b3db3de7ed798f77b28fed39f",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "pit_boss",
+                        "displayName":  "Pit Boss",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/09/PitBossTemp.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/pit_boss.png",
+                                               "sha256":  "23fecf48a6063637290f775534efd1307d9dd3e2787e9fe5398c9876c756b0c9",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "barbella",
+                        "displayName":  "Barbella",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/05/BarbellaFinal.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/barbella.png",
+                                               "sha256":  "af88638577d917a06d7443719786b0c0c34e81a1ee9fb326fca9b31faccdac44",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "air_strike",
+                        "displayName":  "Air Strike",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/07/AirStrike.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/air_strike.png",
+                                               "sha256":  "18d033632d2ef59a5bfab8672a99562163be5dfb1602d438447345d9ebff5b58",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "ember",
+                        "displayName":  "Ember",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/05/EmberFinal.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/ember.png",
+                                               "sha256":  "5e957e4c2f92be8d78d998759f361d4a987775590779a76d2315baddacb373a4",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "ambush",
+                        "displayName":  "Ambush",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/06/AmbushFinal.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/ambush.png",
+                                               "sha256":  "915952e8990fd8b4398f6cb83597a8a8c715ba81fc719f8d5e4cb769e18437da",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "dr_krankcase",
+                        "displayName":  "Dr. Krankcase",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/05/DrKrankCaseFinal.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/dr_krankcase.png",
+                                               "sha256":  "93e3fcc886f07ac25932cd6cb220850c9af2687f314ec866ef69bba9c7a6d73f",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "golden_queen",
+                        "displayName":  "Golden Queen",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/06/GoldenQueenEdit.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/golden_queen.png",
+                                               "sha256":  "b9d0ea8ed65f07b5668973bff336c08b22839feb48af99d7b1600ea2096b5fa1",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "wolfgang",
+                        "displayName":  "Wolfgang",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/05/WolfgangFinal.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/wolfgang.png",
+                                               "sha256":  "009082752d9ee8229ce169a5d24ed1d6439f09ba6a4f438aa5c2131b10e99c10",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "kaos",
+                        "displayName":  "Kaos",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/05/Kaos.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/kaos.png",
+                                               "sha256":  "907b4b2af54e7c0363df197d5bb415696f2b723efb075600658e50ee5ff1495f",
+                                               "score":  112
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "crash_bandicoot",
+                        "displayName":  "Crash Bandicoot",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/06/CrashBandicoot.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/crash_bandicoot.png",
+                                               "sha256":  "f81a144534392db2dc67fae08dc621c36ab37a376cd5933e804ec80df24c7a87",
+                                               "score":  124
+                                           }
+                                       ]
+                    },
+                    {
+                        "id":  "dr_neo_cortex",
+                        "displayName":  "Dr. Neo Cortex",
+                        "game":  "Imaginators",
+                        "sourceUrl":  "https://skylanderscharacterlist.com/imaginators-figures/",
+                        "status":  "candidate_downloaded",
+                        "candidates":  [
+                                           {
+                                               "imageUrl":  "https://skylanderscharacterlist.com/wp-content/uploads/2016/08/DrNeoCortex.png",
+                                               "localPath":  "assets/characters/renders/_review/Imaginators/dr_neo_cortex.png",
+                                               "sha256":  "3235d9f7a816341e80a81b0f5c02c66f8b37e413819e61b600cf58147cb69ede",
+                                               "score":  124
+                                           }
+                                       ]
+                    }
+                ]
+}

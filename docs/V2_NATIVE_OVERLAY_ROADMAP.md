@@ -42,6 +42,8 @@ V2.1 intentionally reports `portalReady=false` and `inputBridgeReady=false` for 
 
 Goal: Cemu renders into a launcher-owned native window/canvas.
 
+Start the next session from `docs/V2_2_SESSION_BRIEF.md`.
+
 Work:
 
 - create the game host HWND in the launcher,

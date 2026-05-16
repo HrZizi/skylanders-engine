@@ -113,8 +113,8 @@ This is the current handoff status for the project.
 
 ## Recommended Next Milestones
 
-1. Run the V1.6 package smoke checklist on a fresh folder with real hardware and record results.
-2. Improve non-XInput hidden-overlay toggle support or clearly scope it as a native-backend feature.
-3. Add automated visual/UI checks for the overlay.
-4. Run the V2.1 manual embedded smoke with a real ROM/key pair, then start V2.2 render-host ownership.
+1. Start V2.2 from `docs/V2_2_SESSION_BRIEF.md`.
+2. Add launcher-owned native host-window/render ownership for `EmbeddedNative`.
+3. Keep bundled external Cemu as the default fallback and preserve its test coverage.
+4. Run the V1.6 package smoke checklist on a fresh folder with real hardware when preparing another release.
 5. Prepare the Cemu patch set for easier long-term maintenance.

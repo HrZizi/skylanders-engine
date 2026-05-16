@@ -59,6 +59,7 @@ This is intentional. The old "embed Cemu fully" path needs deeper Cemu bootstrap
 - `tools/smoke_check_release.ps1`: verifies packaged output.
 - `docs/V1_6_RELEASE_CHECKLIST.md`: release procedure.
 - `docs/V2_NATIVE_OVERLAY_ROADMAP.md`: V2.1-V2.4 roadmap.
+- `docs/V2_2_SESSION_BRIEF.md`: next-session starting brief for native host-window work.
 - `extern/cemu/src/Cafe/OS/libs/nsyshid/SkylandersEnginePortalIpc.*`: Cemu-side portal bridge.
 - `extern/cemu/src/Cafe/OS/libs/nsyshid/SkylandersEngineInputIpc.*`: Cemu-side input bridge.
 - `extern/cemu/src/SkylandersEngineBootstrap.*`: linkable Cemu bootstrap split for V2.1.
@@ -104,7 +105,7 @@ Remove-Item Env:PATH -ErrorAction SilentlyContinue
 
 ## Recommended Next Step
 
-Run the V1.6 package smoke checklist with real ROM/key/hardware inputs, record the manual results, then run the V2.1 embedded manual smoke with `cemuBackendMode` set to `embedded_native`. After that, begin V2.2 launcher-owned render-window work.
+Start a fresh session for V2.2 and use `docs/V2_2_SESSION_BRIEF.md` as the first context file. The next technical goal is launcher-owned native host-window/render ownership for `EmbeddedNative`, while bundled external Cemu remains the default fallback.
 
 ## Documentation Rule
 

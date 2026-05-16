@@ -28,14 +28,18 @@ add_library(skylanders_launcher
     src/CharacterCatalog.cpp
     src/CemuLocator.cpp
     src/CemuConfigEditors.cpp
+    src/EmbeddedCemuHost.cpp
     src/EmulatorCore.cpp
     src/FigureStore.cpp
     src/GameCatalog.cpp
     src/GraphicPackManager.cpp
     src/InputBridge.cpp
+    src/InputRouter.cpp
+    src/NativeOverlayRenderer.cpp
     src/PortalBridge.cpp
     src/ProcessManager.cpp
     src/RomLocator.cpp
+    src/RuntimeModes.cpp
 )
 
 target_include_directories(skylanders_launcher
@@ -65,12 +69,12 @@ if ((SKYLANDERS_EMBED_CEMU OR SKYLANDERS_BUILD_BUNDLED_CEMU) AND EXISTS "${CMAKE
 endif()
 
 if (SKYLANDERS_EMBED_CEMU AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/extern/cemu/CMakeLists.txt")
-    target_compile_definitions(skylanders_launcher PUBLIC SKYLANDERS_HAS_CEMU=1)
+    target_compile_definitions(skylanders_launcher PUBLIC SKYLANDERS_HAS_CEMU=1 ENABLE_VULKAN ENABLE_OPENGL)
     target_include_directories(skylanders_launcher PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/extern/cemu/src"
     )
 
-    foreach(cemu_target IN ITEMS CemuCafe CemuCommon CemuConfig CemuInput CemuAudio CemuUtil CemuComponents)
+    foreach(cemu_target IN ITEMS CemuBootstrap CemuCafe CemuCommon CemuConfig CemuInput CemuAudio CemuUtil CemuComponents)
         if (TARGET ${cemu_target})
             target_link_libraries(skylanders_launcher PUBLIC ${cemu_target})
         endif()

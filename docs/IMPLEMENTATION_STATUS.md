@@ -66,17 +66,25 @@ This is the current handoff status for the project.
   - resolution preset selection,
   - optional fullscreen setting,
   - conservative audio defaults.
+- V1.6 release packaging:
+  - clean distributable folder script,
+  - static packaged-output smoke checker,
+  - package manifest,
+  - release checklist documentation.
+- V2 native-overlay scaffolding:
+  - backend mode config fields,
+  - `EmbeddedCemuHost`,
+  - `NativeOverlayRenderer`,
+  - `InputRouter`,
+  - Cemu `CemuBootstrap` target split from executable startup,
+  - embedded launcher library compile-test.
 
 ## Still Needed For A Complete V1
 
-- Package/release script that produces a clean distributable folder.
-- Fresh-machine setup test from clone through first game launch.
+- Fresh-machine setup test from clone through first game launch using the packaged V1.6 output.
 - More reliable non-XInput overlay toggle support for devices such as SDL/DualSense when the overlay is hidden.
 - Better controller capture feedback for devices whose input is consumed by Cemu/game focus.
-- Figure persistence investigation:
-  - confirm when Cemu flushes `.sky` save state,
-  - document expected save timing,
-  - add tests around create/load/reload behavior where possible.
+- Hardware-backed figure persistence verification for gold/XP retention on the packaged build.
 - Full setup/diagnostics UI pass for first-run failure cases.
 - Automated UI regression checks against the real Ultralight runtime.
 - CI or scripted verification for both normal and bundled builds.
@@ -84,8 +92,14 @@ This is the current handoff status for the project.
 
 ## Deferred Larger Work
 
-- True in-process embedded Cemu via `SKYLANDERS_EMBED_CEMU`.
-- Embedded render-host integration instead of an external overlay window.
+- V2.1 embedded Cemu launch beyond bootstrap initialization.
+- V2.1 full embedded executable/test link cleanup:
+  - remove executable-only Cemu symbol dependencies,
+  - align runtime-library settings with Cemu static dependencies,
+  - avoid pulling wx GUI modules into the embedded backend.
+- V2.2 launcher-owned Cemu render host.
+- V2.3 Ultralight texture compositing into Cemu's Vulkan frame.
+- V2.4 native backend as the default release path.
 - Input interception that prevents games from seeing mapping/toggle inputs.
 - Native ZIP extraction library instead of relying on Windows/PowerShell extraction behavior.
 - Upstream-quality Cemu patch separation for easier rebasing.
@@ -101,8 +115,8 @@ This is the current handoff status for the project.
 
 ## Recommended Next Milestones
 
-1. Stabilize controller mapping and device capture across Keyboard, XInput, SDL, and DualSense devices.
-2. Verify `.sky` figure persistence end to end with bundled Cemu and document exact behavior.
-3. Add packaging automation and a clean "release smoke test" checklist.
-4. Add automated visual/UI checks for the overlay.
+1. Run the V1.6 package smoke checklist on a fresh folder with real hardware and record results.
+2. Improve non-XInput hidden-overlay toggle support or clearly scope it as a native-backend feature.
+3. Add automated visual/UI checks for the overlay.
+4. Advance V2.1 from bootstrap compile-test to embedded title preparation smoke test.
 5. Prepare the Cemu patch set for easier long-term maintenance.

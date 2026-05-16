@@ -111,6 +111,14 @@ SetupConfig SetupConfig::load(const std::filesystem::path& path) {
     if (std::regex_search(text, match, fullscreenPattern)) {
         config.fullscreen = match[1].str() == "true";
     }
+    const std::regex cemuBackendPattern(R"json("cemuBackendMode"\s*:\s*"((?:\\.|[^"])*)")json");
+    if (std::regex_search(text, match, cemuBackendPattern)) {
+        config.cemuBackendMode = cemuBackendModeFromString(unescapeJson(match[1].str()));
+    }
+    const std::regex overlayBackendPattern(R"json("overlayBackendMode"\s*:\s*"((?:\\.|[^"])*)")json");
+    if (std::regex_search(text, match, overlayBackendPattern)) {
+        config.overlayBackendMode = overlayBackendModeFromString(unescapeJson(match[1].str()));
+    }
     return config;
 }
 
@@ -132,6 +140,20 @@ void SetupConfig::save(const std::filesystem::path& path) const {
             out << ",\n";
         }
         out << "  \"fullscreen\": " << (*fullscreen ? "true" : "false");
+        wroteField = true;
+    }
+    if (cemuBackendMode) {
+        if (wroteField) {
+            out << ",\n";
+        }
+        out << "  \"cemuBackendMode\": \"" << cemuBackendModeToString(*cemuBackendMode) << "\"";
+        wroteField = true;
+    }
+    if (overlayBackendMode) {
+        if (wroteField) {
+            out << ",\n";
+        }
+        out << "  \"overlayBackendMode\": \"" << overlayBackendModeToString(*overlayBackendMode) << "\"";
         wroteField = true;
     }
     if (wroteField) {

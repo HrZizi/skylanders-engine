@@ -105,6 +105,23 @@ cmake --build build-bundled --config Release
 ctest --test-dir build-bundled -C Release --output-on-failure
 ```
 
+## Packaging A Release
+
+V1.6 adds a clean package flow for the bundled external-Cemu baseline:
+
+```powershell
+.\tools\package_release.ps1 -BuildDir build-bundled -Configuration Release
+.\tools\smoke_check_release.ps1 -PackagePath out\releases\SkylandersEngine-<timestamp>
+```
+
+The package contains the stubs, bundled Cemu, Ultralight runtime files, tracked assets, docs, and empty `roms/`, `keys/`, and `figures/` folders. It intentionally excludes ROMs, keys, generated figures, and local `runtime/` state.
+
+See [docs/V1_6_RELEASE_CHECKLIST.md](docs/V1_6_RELEASE_CHECKLIST.md) for the full release checklist and [docs/FIGURE_PERSISTENCE.md](docs/FIGURE_PERSISTENCE.md) for the figure save-state test.
+
+## Native Overlay Roadmap
+
+The V2 path is staged behind experimental backend modes. The current default remains bundled external Cemu with an external Ultralight overlay. The native path is documented in [docs/V2_NATIVE_OVERLAY_ROADMAP.md](docs/V2_NATIVE_OVERLAY_ROADMAP.md): V2.1 embedded bootstrap, V2.2 launcher-owned render host, V2.3 Ultralight composited into Vulkan, and V2.4 native backend as the default.
+
 ## Documentation Rules
 
 Documentation is part of the implementation. If a change modifies runtime behavior, public bridge APIs, config file formats, Cemu patch behavior, asset layout, or setup requirements, update the relevant docs in the same commit.

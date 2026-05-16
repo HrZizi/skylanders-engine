@@ -18,6 +18,7 @@
 #include <commdlg.h>
 
 #if SKYLANDERS_HAS_CEMU
+#include "Common/precompiled.h"
 #include "Cafe/TitleList/TitleInfo.h"
 #endif
 

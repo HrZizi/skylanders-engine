@@ -45,6 +45,7 @@ cmake_install.cmake
 build/
 build-bundled/
 build-cemu*/
+build-embedded/
 build_x86/
 build_x64/
 out/

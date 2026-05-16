@@ -7,6 +7,14 @@ const games = [
   { id: "Imaginators", label: "Imaginators", shortLabel: "Imagine", logoPaths: ["game-logos/Skylanders_Imaginators.webp", "game-logos/Imaginators.png"], order: 5 }
 ];
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 const proControls = [
   { id: 1, key: "A", label: "A", x: 774, y: 226, lx: 905, ly: 152 },
   { id: 2, key: "B", label: "B", x: 712, y: 286, lx: 905, ly: 220 },
@@ -365,7 +373,8 @@ function renderAll() {
 
 function renderDiagnostics() {
   const status = qs("#graphicPackStatus");
-  if (!status) return;
+  const launch = qs("#launchDiagnostics");
+  if (!status && !launch) return;
   const packs = nativeState.graphicPacks || {};
   const prep = nativeState.cemuPreparation || {};
   const warnings = Array.isArray(prep.warnings) ? prep.warnings : [];
@@ -374,16 +383,30 @@ function renderDiagnostics() {
     ? prep.graphicPacks.filter((pack) => pack && pack.important && !pack.selected).length
     : 0;
 
-  if (packs.status === "installed") {
+  if (status && packs.status === "installed") {
     status.textContent = `Graphic packs installed (${packs.installedPackCount || 0}); ${selected} active for this game.`;
-  } else if (packs.status === "error") {
+  } else if (status && packs.status === "error") {
     status.textContent = packs.lastError || "Graphic pack update failed; game will launch with standard Cemu settings.";
-  } else if (missingImportant > 0 || warnings.length > 0) {
+  } else if (status && (missingImportant > 0 || warnings.length > 0)) {
     status.textContent = "Graphic packs missing or outdated; game will launch with standard Cemu settings.";
-  } else if (packs.status === "checking" || packs.status === "extracting") {
+  } else if (status && (packs.status === "checking" || packs.status === "extracting")) {
     status.textContent = "Graphic packs update in progress...";
-  } else {
+  } else if (status) {
     status.textContent = `Graphic packs: ${packs.status || "not checked"}.`;
+  }
+
+  if (launch) {
+    const lines = [
+      `Cemu: ${nativeState.cemuSource || "unresolved"} (${nativeState.cemuBackendMode || "bundled_external"})`,
+      `ROM: ${nativeState.hasGamePath ? "resolved" : "missing"}`,
+      `Keys: ${nativeState.keysStatus || "unknown"}`,
+      `Portal bridge: ${nativeState.portalReady ? "ready" : "waiting"}`,
+      `Input bridge: ${nativeState.inputBridgeReady ? "ready" : "waiting"}`
+    ];
+    if (Array.isArray(warnings) && warnings.length > 0) {
+      lines.push(`Warnings: ${warnings.length}`);
+    }
+    launch.innerHTML = lines.map((line) => `<span>${escapeHtml(line)}</span>`).join("");
   }
 }
 

@@ -9,15 +9,14 @@
 #include <vector>
 
 #if SKYLANDERS_HAS_CEMU
+#include "Common/precompiled.h"
 #include "Cafe/CafeSystem.h"
 #include "Cafe/OS/libs/nsyshid/Skylander.h"
 #include "Cafe/TitleList/TitleInfo.h"
 #include "Cafe/TitleList/TitleList.h"
 #include "Common/FileStream.h"
+#include "SkylandersEngineBootstrap.h"
 
-#ifdef ENABLE_VULKAN
-#include "Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.h"
-#endif
 #endif
 
 namespace skylanders {
@@ -89,6 +88,7 @@ void EmulatorCore::stop() {
 
 #if SKYLANDERS_HAS_CEMU
     CafeSystem::ShutdownTitle();
+    SkylandersEngineBootstrapShutdown();
 #endif
 
     for (auto& figure : placedFigures_) {
@@ -165,19 +165,8 @@ bool EmulatorCore::initializeCemu(const GameLaunchSpec&) {
     }
 
 #if SKYLANDERS_HAS_CEMU
-#ifdef ENABLE_VULKAN
-    if (!InitializeGlobalVulkan()) {
-        return false;
-    }
-#endif
-
-    // Upstream Cemu keeps the full common bootstrap in src/main.cpp as
-    // CemuCommonInit(). The next upstream patch should move that function into
-    // a linkable CemuCoreBootstrap target; until then, this class owns the call
-    // site and render-host boundary.
-    CafeSystem::Initialize();
-    initialized_ = true;
-    return true;
+    initialized_ = SkylandersEngineBootstrapInitialize();
+    return initialized_;
 #else
     return false;
 #endif

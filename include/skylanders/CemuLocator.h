@@ -1,5 +1,7 @@
 #pragma once
 
+#include "skylanders/RuntimeModes.h"
+
 #include <filesystem>
 #include <optional>
 #include <string>
@@ -28,6 +30,8 @@ struct CemuValidationResult {
 struct SetupConfig {
     std::optional<std::filesystem::path> externalCemuExePath;
     std::optional<bool> fullscreen;
+    std::optional<CemuBackendMode> cemuBackendMode;
+    std::optional<OverlayBackendMode> overlayBackendMode;
 
     static SetupConfig load(const std::filesystem::path& path);
     void save(const std::filesystem::path& path) const;

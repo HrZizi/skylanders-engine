@@ -1,13 +1,17 @@
 #include "skylanders/CharacterCatalog.h"
+#include "skylanders/EmbeddedCemuHost.h"
 #include "skylanders/EmulatorCore.h"
 #include "skylanders/CemuLocator.h"
 #include "skylanders/FigureStore.h"
 #include "skylanders/GameCatalog.h"
 #include "skylanders/GraphicPackManager.h"
 #include "skylanders/InputBridge.h"
+#include "skylanders/InputRouter.h"
+#include "skylanders/NativeOverlayRenderer.h"
 #include "skylanders/PortalBridge.h"
 #include "skylanders/ProcessManager.h"
 #include "skylanders/RomLocator.h"
+#include "skylanders/RuntimeModes.h"
 
 #include <algorithm>
 #include <array>
@@ -1552,6 +1556,9 @@ private:
         json << "\"stub\":\"" << jsonEscape(exePath_.string()) << "\",";
         json << "\"gamePath\":\"" << jsonEscape(spec_.gamePath.string()) << "\",";
         json << "\"hasGamePath\":" << (spec_.gamePath.empty() ? "false" : "true") << ",";
+        const bool keysPresent = std::filesystem::exists(projectRoot_ / "keys" / "keys.txt");
+        json << "\"keysPresent\":" << (keysPresent ? "true" : "false") << ",";
+        json << "\"keysStatus\":\"" << (keysPresent ? "present" : "missing") << "\",";
         json << "\"titleId\":\"" << (spec_.titleId ? jsonEscape(std::to_string(*spec_.titleId)) : "") << "\",";
         json << "\"region\":\"" << jsonEscape(narrow(spec_.region)) << "\",";
         json << "\"embeddedCemu\":" << (core_.available() ? "true" : "false") << ",";
@@ -1559,6 +1566,9 @@ private:
         json << "\"cemuRoot\":\"" << (cemuResolution_ ? jsonEscape(cemuResolution_->cemuRoot.string()) : "") << "\",";
         json << "\"cemuExe\":\"" << (cemuResolution_ ? jsonEscape(cemuResolution_->cemuExe.string()) : "") << "\",";
         json << "\"cemuSource\":\"" << (cemuResolution_ ? jsonEscape(skylanders::CemuLocator::sourceToString(cemuResolution_->source)) : "") << "\",";
+        json << "\"cemuBackendMode\":\"" << jsonEscape(skylanders::cemuBackendModeToString(setupConfig_.cemuBackendMode.value_or(skylanders::CemuBackendMode::BundledExternal))) << "\",";
+        json << "\"overlayBackendMode\":\"" << jsonEscape(skylanders::overlayBackendModeToString(setupConfig_.overlayBackendMode.value_or(skylanders::OverlayBackendMode::ExternalWindow))) << "\",";
+        json << "\"nativeOverlay\":" << nativeOverlay_.nativeStateJson() << ",";
         json << "\"running\":" << (gameRunning_ ? "true" : "false") << ",";
         json << "\"inputBridgeReady\":" << ((running_.processId != 0 && inputBridge_.ping(running_.processId)) ? "true" : "false") << ",";
         json << "\"portalReady\":" << (portalReady() ? "true" : "false") << ",";
@@ -1577,13 +1587,17 @@ private:
     std::filesystem::path projectRoot_;
     skylanders::RomLocator locator_;
     skylanders::CemuLocator cemuLocator_;
+    skylanders::SetupConfig setupConfig_ = skylanders::SetupConfig::load(projectRoot_ / "runtime" / "config" / "setup.json");
     std::optional<skylanders::CemuResolution> cemuResolution_;
     skylanders::GraphicPackManager graphicPacks_;
     skylanders::ProcessManager manager_;
+    skylanders::EmbeddedCemuHost embeddedHost_;
     skylanders::EmulatorCore core_;
     skylanders::GameLaunchSpec spec_;
     skylanders::PortalBridge portal_;
     skylanders::InputBridge inputBridge_;
+    skylanders::InputRouter inputRouter_;
+    skylanders::NativeOverlayRenderer nativeOverlay_;
     skylanders::RunningProcess running_;
     std::string lastError_;
     std::string lastPortalError_;

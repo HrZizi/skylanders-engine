@@ -7,6 +7,7 @@
 #include "skylanders/PortalBridge.h"
 #include "skylanders/ProcessManager.h"
 #include "skylanders/RomLocator.h"
+#include "skylanders/RuntimeModes.h"
 
 #include <cassert>
 #include <algorithm>
@@ -199,6 +200,34 @@ void assertCemuValidationAndPrecedence() {
     resolved = locator.resolve();
     assert(resolved);
     assert(resolved->source == skylanders::CemuSource::LegacyFallback);
+
+    std::filesystem::remove_all(root);
+}
+
+void assertRuntimeModeConfig() {
+    assert(skylanders::cemuBackendModeToString(skylanders::CemuBackendMode::BundledExternal) == "bundled_external");
+    assert(skylanders::cemuBackendModeToString(skylanders::CemuBackendMode::EmbeddedNative) == "embedded_native");
+    assert(skylanders::overlayBackendModeToString(skylanders::OverlayBackendMode::ExternalWindow) == "external_window");
+    assert(skylanders::overlayBackendModeToString(skylanders::OverlayBackendMode::NativeRenderer) == "native_renderer");
+    assert(skylanders::cemuBackendModeFromString("embedded_native") == skylanders::CemuBackendMode::EmbeddedNative);
+    assert(skylanders::overlayBackendModeFromString("native_renderer") == skylanders::OverlayBackendMode::NativeRenderer);
+
+    const auto root = std::filesystem::temp_directory_path() / "SkylandersEngineModeConfigTests";
+    std::filesystem::remove_all(root);
+    const auto path = root / "setup.json";
+
+    skylanders::SetupConfig setup;
+    setup.externalCemuExePath = root / "Cemu.exe";
+    setup.fullscreen = true;
+    setup.cemuBackendMode = skylanders::CemuBackendMode::EmbeddedNative;
+    setup.overlayBackendMode = skylanders::OverlayBackendMode::NativeRenderer;
+    setup.save(path);
+
+    const auto loaded = skylanders::SetupConfig::load(path);
+    assert(loaded.externalCemuExePath);
+    assert(loaded.fullscreen && *loaded.fullscreen);
+    assert(loaded.cemuBackendMode && *loaded.cemuBackendMode == skylanders::CemuBackendMode::EmbeddedNative);
+    assert(loaded.overlayBackendMode && *loaded.overlayBackendMode == skylanders::OverlayBackendMode::NativeRenderer);
 
     std::filesystem::remove_all(root);
 }
@@ -485,5 +514,6 @@ int main() {
     assertKeysValidationAcceptsCemuStyleLines();
     assertKeysValidationRejectsMeaningfulLinesWithoutKeys();
     assertCemuValidationAndPrecedence();
+    assertRuntimeModeConfig();
     return 0;
 }

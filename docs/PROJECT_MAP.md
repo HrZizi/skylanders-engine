@@ -51,6 +51,13 @@ Resolves Cemu in this order:
 
 Only user-selected external paths are persisted.
 
+`runtime/config/setup.json` also carries experimental backend choices:
+
+- `cemuBackendMode`: `bundled_external`, `embedded_native`, or `external_picked`
+- `overlayBackendMode`: `external_window` or `native_renderer`
+
+The defaults remain `bundled_external` and `external_window` until V2.4.
+
 ### `ProcessManager`
 
 Files:
@@ -141,6 +148,33 @@ Files:
 
 Reserved adapter for true in-process Cemu. `SKYLANDERS_EMBED_CEMU` remains off by default; the project currently uses bundled external Cemu.
 
+### `EmbeddedCemuHost`
+
+Files:
+
+- `include/skylanders/EmbeddedCemuHost.h`
+- `src/EmbeddedCemuHost.cpp`
+
+Experimental V2.1 host for embedded Cemu. It wraps Cemu bootstrap initialization, title launch, shutdown, and future direct portal/input calls. In non-embedded builds it reports unavailable.
+
+### `NativeOverlayRenderer`
+
+Files:
+
+- `include/skylanders/NativeOverlayRenderer.h`
+- `src/NativeOverlayRenderer.cpp`
+
+V2.3 placeholder for rendering the existing Ultralight overlay into Cemu's Vulkan output. The current implementation only reports status; the external AppCore window remains the active V1 overlay path.
+
+### `InputRouter`
+
+Files:
+
+- `include/skylanders/InputRouter.h`
+- `src/InputRouter.cpp`
+
+V2 input coordination layer. It tracks overlay visibility and whether gameplay input should be suppressed. The native backend will route keyboard, mouse, and controller events through this class before Cemu gameplay mapping.
+
 ## Cemu Submodule Patch Points
 
 Submodule:
@@ -149,6 +183,8 @@ Submodule:
 
 Important patched areas:
 
+- `src/SkylandersEngineBootstrap.*`
+- `src/CMakeLists.txt` `CemuBootstrap` target
 - `src/Cafe/OS/libs/nsyshid/SkylandersEnginePortalIpc.*`
 - `src/Cafe/OS/libs/nsyshid/SkylandersEngineInputIpc.*`
 - `src/Cafe/OS/libs/nsyshid/Skylander.*`
@@ -156,6 +192,8 @@ Important patched areas:
 - `src/input/InputManager.cpp`
 
 These provide the bundled-only portal and input IPC used by the overlay.
+
+`CemuBootstrap` is the first V2 split from Cemu's executable-only startup path. It exposes `SkylandersEngineBootstrapInitialize()` and `SkylandersEngineBootstrapShutdown()` so the launcher can link against Cemu initialization in experimental embedded builds.
 
 ## Frontend Overlay
 
@@ -188,6 +226,8 @@ Ignored local state:
 - `runtime/<GameId>/mlc01/`: per-game Cemu MLC folders.
 - `figures/`: generated `.sky` figure files.
 
+Generated figures are saved at `figures/<GameId>/<assetKey>.sky`. See [FIGURE_PERSISTENCE.md](FIGURE_PERSISTENCE.md) for expected save timing and manual verification.
+
 Tracked placeholders:
 
 - `roms/README.md`
@@ -205,3 +245,13 @@ Tracked approved assets live under:
 - `assets/elements/`
 
 Ignored review candidates live under `_review` folders. See [assets/README.md](../assets/README.md) for importer commands and naming rules.
+
+## Release Packaging
+
+Files:
+
+- `tools/package_release.ps1`
+- `tools/smoke_check_release.ps1`
+- `docs/V1_6_RELEASE_CHECKLIST.md`
+
+The package script builds or reuses `build-bundled/Release`, copies only the shippable runtime surface, adds docs and placeholders, and writes `package_manifest.json`. The smoke script verifies required files and prints the manual release checklist.

@@ -12,6 +12,8 @@ Update documentation in the same commit when changing any of these:
 - runtime config file names or schemas,
 - Cemu command-line arguments, `settings.xml`, or game profile writes,
 - Cemu submodule patch behavior,
+- backend mode behavior or native-overlay roadmap changes,
+- packaging/release output contents,
 - asset folder structure or naming rules,
 - importer scripts or generated manifest formats,
 - user-facing setup flow for ROMs, keys, figures, controls, or graphic packs.
@@ -23,6 +25,9 @@ Update documentation in the same commit when changing any of these:
 - `docs/IMPLEMENTATION_STATUS.md`: implemented features, missing work, deferred work, and known risks.
 - `docs/ProcessManagerArchitecture.md`: Cemu launch/config preparation details.
 - `docs/GraphicPackUpdateTask.md`: graphic-pack update/install behavior and troubleshooting.
+- `docs/V1_6_RELEASE_CHECKLIST.md`: release packaging and smoke verification.
+- `docs/FIGURE_PERSISTENCE.md`: generated figure locations, ownership, and persistence checks.
+- `docs/V2_NATIVE_OVERLAY_ROADMAP.md`: V2.1-V2.4 native backend plan and acceptance criteria.
 - `assets/README.md`: asset naming, review folders, import scripts, and gap reports.
 - `docs/ConsultantHandoffSummary.md`: concise current handoff for external reviewers or resumed agents.
 
@@ -40,7 +45,24 @@ cmake --build build-bundled --config Release
 ctest --test-dir build-bundled -C Release --output-on-failure
 ```
 
+Before handing off a release candidate, also run:
+
+```powershell
+.\tools\package_release.ps1 -BuildDir build-bundled -Configuration Release
+.\tools\smoke_check_release.ps1 -PackagePath out\releases\SkylandersEngine-<timestamp>
+```
+
 For documentation-only edits, `node --check assets/app.js` and a targeted review may be enough, but the final handoff should say what was and was not run.
+
+## Release Packaging Changes
+
+When packaging behavior changes:
+
+1. Update `tools/package_release.ps1`.
+2. Update `tools/smoke_check_release.ps1` if required files or smoke steps changed.
+3. Update `docs/V1_6_RELEASE_CHECKLIST.md`.
+4. Confirm the package still excludes ROMs, keys, generated figures, and local runtime state.
+5. Record the package path and smoke result in the handoff.
 
 ## Asset/Catalog Changes
 

@@ -35,6 +35,8 @@ This is intentional. The old "embed Cemu fully" path needs deeper Cemu bootstrap
 - Overlay toggle config with always-on `F1`.
 - Graphic-pack download/update, selection diagnostics, and non-fatal warnings.
 - Per-game Cemu settings/profile preparation.
+- V1.6 packaging and packaged-output smoke scripts.
+- Experimental V2 backend/native-overlay scaffolding for embedded Cemu work.
 
 ## Key Files
 
@@ -47,10 +49,18 @@ This is intentional. The old "embed Cemu fully" path needs deeper Cemu bootstrap
 - `src/GraphicPackManager.cpp`: graphic-pack download/install state.
 - `src/PortalBridge.cpp`: launcher-side portal IPC.
 - `src/InputBridge.cpp`: launcher-side input IPC.
+- `src/EmbeddedCemuHost.cpp`: experimental V2 embedded Cemu host.
+- `src/NativeOverlayRenderer.cpp`: V2 native overlay renderer placeholder.
+- `src/InputRouter.cpp`: future central input routing/suppression.
 - `src/CharacterCatalog.cpp` and `src/GeneratedCharacterCatalog.inc`: Cemu toy catalog.
 - `assets/app.js`, `assets/style.css`, `assets/index.html`: overlay UI.
+- `tools/package_release.ps1`: creates a clean distributable folder.
+- `tools/smoke_check_release.ps1`: verifies packaged output.
+- `docs/V1_6_RELEASE_CHECKLIST.md`: release procedure.
+- `docs/V2_NATIVE_OVERLAY_ROADMAP.md`: V2.1-V2.4 roadmap.
 - `extern/cemu/src/Cafe/OS/libs/nsyshid/SkylandersEnginePortalIpc.*`: Cemu-side portal bridge.
 - `extern/cemu/src/Cafe/OS/libs/nsyshid/SkylandersEngineInputIpc.*`: Cemu-side input bridge.
+- `extern/cemu/src/SkylandersEngineBootstrap.*`: linkable Cemu bootstrap split for V2.1.
 
 ## Local Runtime State
 
@@ -74,6 +84,13 @@ cmake --build build-bundled --config Release
 ctest --test-dir build-bundled -C Release --output-on-failure
 ```
 
+Package smoke:
+
+```powershell
+.\tools\package_release.ps1 -BuildDir build-bundled -Configuration Release
+.\tools\smoke_check_release.ps1 -PackagePath out\releases\SkylandersEngine-<timestamp>
+```
+
 If MSBuild fails because this sandbox has both `Path` and `PATH`, remove the duplicate before building:
 
 ```powershell
@@ -82,8 +99,8 @@ Remove-Item Env:PATH -ErrorAction SilentlyContinue
 
 ## Recommended Next Step
 
-Stabilize controller mapping and input capture across SDL/DualSense devices, then verify figure persistence end to end with bundled Cemu. Those are the two biggest user-visible risks left before packaging work.
+Run the V1.6 package smoke checklist with real ROM/key/hardware inputs, record the manual results, then advance V2.1 from bootstrap compile-test to an embedded "ready to launch title" smoke path.
 
 ## Documentation Rule
 
-Keep `README.md`, `docs/PROJECT_MAP.md`, `docs/IMPLEMENTATION_STATUS.md`, and `assets/README.md` current with code changes. See `docs/DOCUMENTATION_MAINTENANCE.md` before committing handoff work.
+Keep `README.md`, `docs/PROJECT_MAP.md`, `docs/IMPLEMENTATION_STATUS.md`, `docs/ConsultantHandoffSummary.md`, `docs/DOCUMENTATION_MAINTENANCE.md`, and the milestone-specific docs current with code changes. See `docs/DOCUMENTATION_MAINTENANCE.md` before committing handoff work.

@@ -47,11 +47,24 @@ InputBridgeResult unavailableInput() {
 
 } // namespace
 
+std::string embeddedCemuPhaseToString(EmbeddedCemuPhase phase) {
+    switch (phase) {
+    case EmbeddedCemuPhase::Unavailable: return "unavailable";
+    case EmbeddedCemuPhase::Configured: return "configured";
+    case EmbeddedCemuPhase::Initialized: return "initialized";
+    case EmbeddedCemuPhase::TitlePrepared: return "title_prepared";
+    case EmbeddedCemuPhase::RunningUnsupported: return "running_unsupported";
+    }
+    return "unavailable";
+}
+
 EmbeddedCemuHost::EmbeddedCemuHost() {
 #if SKYLANDERS_HAS_CEMU
     status_.available = true;
+    status_.phase = EmbeddedCemuPhase::Unavailable;
 #else
     status_.available = false;
+    status_.phase = EmbeddedCemuPhase::Unavailable;
     status_.lastError = "SkylandersEngine was built without embedded Cemu support.";
 #endif
 }
@@ -60,8 +73,53 @@ EmbeddedCemuHost::~EmbeddedCemuHost() {
     shutdown();
 }
 
+bool EmbeddedCemuHost::configure(const EmbeddedCemuConfig& config) {
+#if SKYLANDERS_HAS_CEMU
+    std::error_code ec;
+    if (config.cemuRoot.empty()) {
+        status_.lastError = "Embedded Cemu root is not configured.";
+        return false;
+    }
+    if (!std::filesystem::exists(config.cemuRoot / "resources", ec)) {
+        status_.lastError = "Embedded Cemu resources folder is missing.";
+        return false;
+    }
+    if (!std::filesystem::exists(config.cemuRoot / "gameProfiles", ec)) {
+        status_.lastError = "Embedded Cemu gameProfiles folder is missing.";
+        return false;
+    }
+
+    const SkylandersEngineBootstrapConfig bootstrapConfig{
+        true,
+        config.cemuRoot / "Cemu.exe",
+        config.cemuRoot,
+        config.cemuRoot,
+        config.cemuRoot / "shaderCache",
+        config.cemuRoot,
+    };
+    if (!SkylandersEngineBootstrapConfigure(bootstrapConfig)) {
+        status_.lastError = "Cemu bootstrap paths could not be configured.";
+        return false;
+    }
+
+    config_ = config;
+    status_.configured = true;
+    status_.phase = EmbeddedCemuPhase::Configured;
+    status_.lastError.clear();
+    return true;
+#else
+    (void)config;
+    status_.lastError = "Embedded Cemu is unavailable in this build.";
+    return false;
+#endif
+}
+
 bool EmbeddedCemuHost::initialize() {
 #if SKYLANDERS_HAS_CEMU
+    if (!status_.configured) {
+        status_.lastError = "Embedded Cemu has not been configured.";
+        return false;
+    }
     if (status_.initialized) {
         return true;
     }
@@ -70,6 +128,7 @@ bool EmbeddedCemuHost::initialize() {
         return false;
     }
     status_.initialized = true;
+    status_.phase = EmbeddedCemuPhase::Initialized;
     status_.lastError.clear();
     return true;
 #else
@@ -78,7 +137,7 @@ bool EmbeddedCemuHost::initialize() {
 #endif
 }
 
-bool EmbeddedCemuHost::launch(const GameLaunchSpec& spec) {
+bool EmbeddedCemuHost::prepareTitle(const GameLaunchSpec& spec) {
 #if SKYLANDERS_HAS_CEMU
     if (!initialize()) {
         return false;
@@ -112,10 +171,25 @@ bool EmbeddedCemuHost::launch(const GameLaunchSpec& spec) {
         }
     }
 
-    CafeSystem::LaunchForegroundTitle();
-    status_.running = true;
+    status_.titlePrepared = true;
+    status_.phase = EmbeddedCemuPhase::TitlePrepared;
     status_.lastError.clear();
     return true;
+#else
+    (void)spec;
+    status_.lastError = "Embedded Cemu is unavailable in this build.";
+    return false;
+#endif
+}
+
+bool EmbeddedCemuHost::launch(const GameLaunchSpec& spec) {
+#if SKYLANDERS_HAS_CEMU
+    if (!prepareTitle(spec)) {
+        return false;
+    }
+    status_.phase = EmbeddedCemuPhase::RunningUnsupported;
+    status_.lastError = "Embedded render host is not implemented in V2.1.";
+    return false;
 #else
     (void)spec;
     status_.lastError = "Embedded Cemu is unavailable in this build.";
@@ -134,6 +208,12 @@ void EmbeddedCemuHost::shutdown() {
 #endif
     status_.running = false;
     status_.initialized = false;
+    status_.titlePrepared = false;
+    if (status_.configured) {
+        status_.phase = EmbeddedCemuPhase::Configured;
+    } else {
+        status_.phase = EmbeddedCemuPhase::Unavailable;
+    }
 }
 
 EmbeddedCemuStatus EmbeddedCemuHost::status() const {

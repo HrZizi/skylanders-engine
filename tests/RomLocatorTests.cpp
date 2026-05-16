@@ -1,5 +1,6 @@
 #include "skylanders/CharacterCatalog.h"
 #include "skylanders/CemuLocator.h"
+#include "skylanders/EmbeddedCemuHost.h"
 #include "skylanders/FigureStore.h"
 #include "skylanders/GameCatalog.h"
 #include "skylanders/GraphicPackManager.h"
@@ -211,6 +212,20 @@ void assertRuntimeModeConfig() {
     assert(skylanders::overlayBackendModeToString(skylanders::OverlayBackendMode::NativeRenderer) == "native_renderer");
     assert(skylanders::cemuBackendModeFromString("embedded_native") == skylanders::CemuBackendMode::EmbeddedNative);
     assert(skylanders::overlayBackendModeFromString("native_renderer") == skylanders::OverlayBackendMode::NativeRenderer);
+    assert(skylanders::embeddedCemuPhaseToString(skylanders::EmbeddedCemuPhase::TitlePrepared) == "title_prepared");
+
+    auto selection = skylanders::selectCemuBackend(std::nullopt, false, true);
+    assert(selection.requested == skylanders::CemuBackendMode::BundledExternal);
+    assert(selection.effective == skylanders::CemuBackendMode::BundledExternal);
+    assert(!selection.explicitSelection);
+    assert(!selection.fallbackUsed);
+
+    selection = skylanders::selectCemuBackend(skylanders::CemuBackendMode::EmbeddedNative, false, true);
+    assert(selection.requested == skylanders::CemuBackendMode::EmbeddedNative);
+    assert(selection.effective == skylanders::CemuBackendMode::EmbeddedNative);
+    assert(selection.explicitSelection);
+    assert(!selection.fallbackAllowed);
+    assert(!selection.fallbackReason.empty());
 
     const auto root = std::filesystem::temp_directory_path() / "SkylandersEngineModeConfigTests";
     std::filesystem::remove_all(root);
@@ -499,6 +514,42 @@ void assertProcessPreparationDiagnostics() {
     std::filesystem::remove_all(root, cleanupError);
 }
 
+void assertEmbeddedPreparationAndStatus() {
+    const auto root = std::filesystem::current_path() / "build" / "test-tmp" / "SkylandersEngineEmbeddedTests";
+    std::filesystem::remove_all(root);
+
+    writeText(root / "keys" / "keys.txt", "common_key = 000102030405060708090a0b0c0d0e0f\n");
+    writeText(root / "cemu" / "resources" / "placeholder.txt", "");
+    writeText(root / "cemu" / "gameProfiles" / "placeholder.txt", "");
+
+    skylanders::ProcessManagerConfig config;
+    config.cemuRoot = root / "cemu";
+    config.runtimeRoot = root / "runtime";
+    config.keysPath = root / "keys" / "keys.txt";
+    config.fullscreen = false;
+
+    skylanders::GameLaunchSpec spec;
+    spec.game = skylanders::GameId::Giants;
+    spec.displayName = L"Giants";
+    spec.gamePath = root / "roms" / "Giants";
+    spec.titleId = 0x000500001010D700ull;
+
+    skylanders::ProcessManager manager(config);
+    const auto report = manager.prepareForEmbeddedDiagnostics(spec);
+    assert(report.game == skylanders::GameId::Giants);
+    assert(std::filesystem::exists(root / "cemu" / "settings.xml"));
+    assert(std::filesystem::exists(root / "cemu" / "keys.txt"));
+    assert(std::filesystem::exists(root / "runtime" / "config" / "last_launch_diagnostics.json"));
+
+    skylanders::EmbeddedCemuHost host;
+    const auto missingConfig = skylanders::EmbeddedCemuConfig{};
+    assert(!host.configure(missingConfig));
+    assert(!host.status().lastError.empty());
+
+    std::error_code cleanupError;
+    std::filesystem::remove_all(root, cleanupError);
+}
+
 } // namespace
 
 int main() {
@@ -510,6 +561,7 @@ int main() {
     assertInputBridgeMessages();
     assertGraphicPackWebsiteParsing();
     assertProcessPreparationDiagnostics();
+    assertEmbeddedPreparationAndStatus();
     assertRomLocatorPrecedenceAndValidation();
     assertKeysValidationAcceptsCemuStyleLines();
     assertKeysValidationRejectsMeaningfulLinesWithoutKeys();

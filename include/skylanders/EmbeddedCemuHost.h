@@ -6,16 +6,42 @@
 
 #include <cstdint>
 #include <filesystem>
+#include <optional>
 #include <string>
 
 namespace skylanders {
 
+enum class EmbeddedCemuPhase {
+    Unavailable,
+    Configured,
+    Initialized,
+    TitlePrepared,
+    RunningUnsupported,
+};
+
+struct EmbeddedCemuConfig {
+    std::filesystem::path cemuRoot;
+    std::filesystem::path settingsPath;
+    std::filesystem::path mlcPath;
+    std::filesystem::path gameProfilePath;
+    std::filesystem::path controllerProfileRoot;
+    std::filesystem::path keysPath;
+    std::filesystem::path graphicPacksRoot;
+};
+
 struct EmbeddedCemuStatus {
     bool available = false;
+    bool configured = false;
     bool initialized = false;
+    bool titlePrepared = false;
     bool running = false;
+    bool fallbackUsed = false;
+    EmbeddedCemuPhase phase = EmbeddedCemuPhase::Unavailable;
+    std::string fallbackReason;
     std::string lastError;
 };
+
+std::string embeddedCemuPhaseToString(EmbeddedCemuPhase phase);
 
 class EmbeddedCemuHost {
 public:
@@ -25,7 +51,9 @@ public:
     EmbeddedCemuHost(const EmbeddedCemuHost&) = delete;
     EmbeddedCemuHost& operator=(const EmbeddedCemuHost&) = delete;
 
+    bool configure(const EmbeddedCemuConfig& config);
     bool initialize();
+    bool prepareTitle(const GameLaunchSpec& spec);
     bool launch(const GameLaunchSpec& spec);
     void shutdown();
     EmbeddedCemuStatus status() const;
@@ -46,6 +74,7 @@ public:
         const std::string& captureMode) const;
 
 private:
+    std::optional<EmbeddedCemuConfig> config_;
     EmbeddedCemuStatus status_;
 };
 

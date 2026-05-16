@@ -1,4 +1,5 @@
 #include "skylanders/CharacterCatalog.h"
+#include "skylanders/CemuConfigEditors.h"
 #include "skylanders/EmbeddedCemuHost.h"
 #include "skylanders/EmulatorCore.h"
 #include "skylanders/CemuLocator.h"
@@ -635,6 +636,7 @@ public:
         config["loadButtonMappings"] = BindJSCallbackWithRetval(&SkylandersApp::loadButtonMappings);
         config["saveButtonMappings"] = BindJSCallbackWithRetval(&SkylandersApp::saveButtonMappings);
         config["loadInputMappings"] = BindJSCallbackWithRetval(&SkylandersApp::loadInputMappings);
+        config["setCemuBackendMode"] = BindJSCallbackWithRetval(&SkylandersApp::setCemuBackendMode);
         global["config"] = ultralight::JSValue(static_cast<JSObjectRef>(config));
 
         ultralight::JSObject input;
@@ -967,6 +969,56 @@ private:
         pushNativeState();
     }
 
+    skylanders::CemuBackendSelection backendSelection() const {
+        return skylanders::selectCemuBackend(
+            setupConfig_.cemuBackendMode,
+            embeddedHost_.status().available,
+            cemuResolution_.has_value());
+    }
+
+    bool embeddedBackendRequested() const {
+        return backendSelection().effective == skylanders::CemuBackendMode::EmbeddedNative;
+    }
+
+    skylanders::EmbeddedCemuConfig makeEmbeddedConfig() const {
+        const auto cemuRoot = cemuResolution_ ? cemuResolution_->cemuRoot : std::filesystem::path{};
+        const auto gameRoot = projectRoot_ / "runtime" / skylanders::gameIdToString(spec_.game);
+        const auto titleId = spec_.titleId.value_or(0);
+        return {
+            cemuRoot,
+            cemuRoot / "settings.xml",
+            gameRoot / "mlc01",
+            cemuRoot / "gameProfiles" / (skylanders::titleIdToHex(titleId) + ".ini"),
+            cemuRoot / "controllerProfiles",
+            cemuRoot / "keys.txt",
+            cemuRoot / "graphicPacks",
+        };
+    }
+
+    bool startEmbeddedReadiness() {
+        manager_.prepareForEmbeddedDiagnostics(spec_);
+        if (!embeddedHost_.configure(makeEmbeddedConfig())) {
+            throw std::runtime_error(embeddedHost_.status().lastError.empty()
+                ? "Embedded Cemu could not be configured."
+                : embeddedHost_.status().lastError);
+        }
+        if (!embeddedHost_.prepareTitle(spec_)) {
+            throw std::runtime_error(embeddedHost_.status().lastError.empty()
+                ? "Embedded Cemu could not prepare the selected title."
+                : embeddedHost_.status().lastError);
+        }
+
+        running_ = {};
+        gameRunning_ = true;
+        lastPortalError_ = "Embedded backend ready; portal/input direct integration pending.";
+        input_.setConfig(loadOverlayToggleConfig());
+        input_.setCemuInputBridge(nullptr, 0);
+        input_.start(overlayController_.overlayWindow());
+        overlayController_.show();
+        pushNativeState();
+        return true;
+    }
+
     bool startGame() {
         if (launchAttempted_) {
             return gameRunning_;
@@ -1004,17 +1056,9 @@ private:
             }
             clearAllPortalSlots();
             lastPortalError_.clear();
-#if SKYLANDERS_HAS_CEMU
-            if (core_.available()) {
-                running_ = {};
-                gameRunning_ = core_.start(spec_);
-                if (!gameRunning_) {
-                    throw std::runtime_error("Embedded Cemu failed to start.");
-                }
-                pushNativeState();
-                return true;
+            if (embeddedBackendRequested()) {
+                return startEmbeddedReadiness();
             }
-#endif
             running_ = manager_.launch(spec_);
             gameRunning_ = running_.processId != 0;
             if (!gameRunning_) {
@@ -1107,11 +1151,11 @@ private:
 
         const int slot = static_cast<int>(args[0].ToInteger());
         const auto filePath = std::filesystem::path(jsValueToUtf8(args[1]));
-#if SKYLANDERS_HAS_CEMU
-        if (core_.available()) {
-            return ultralight::JSValue(core_.placeFigure(slot, filePath));
+        if (embeddedBackendRequested()) {
+            lastPortalError_ = "Embedded backend ready; portal direct integration pending.";
+            pushNativeState();
+            return ultralight::JSValue(false);
         }
-#endif
         if (running_.processId == 0) {
             return ultralight::JSValue(false);
         }
@@ -1149,19 +1193,11 @@ private:
                 std::filesystem::create_directories(figurePath.parent_path());
             }
 
-#if SKYLANDERS_HAS_CEMU
-            if (core_.available()) {
-                const bool ok = core_.placeOrCreateFigure(slot, figurePath, character->skyId, character->skyVar);
-                if (!ok) {
-                    lastPortalError_ = "Cemu could not create or place the selected Skylander.";
-                } else {
-                    setPortalSlot(slot, *character, figurePath, std::nullopt);
-                    lastPortalError_.clear();
-                }
+            if (embeddedBackendRequested()) {
+                lastPortalError_ = "Embedded backend ready; portal direct integration pending.";
                 pushNativeState();
-                return ultralight::JSValue(ok);
+                return ultralight::JSValue(false);
             }
-#endif
             if (running_.processId == 0) {
                 lastPortalError_ = "Cemu is not running.";
                 pushNativeState();
@@ -1192,19 +1228,11 @@ private:
         }
 
         const int slot = static_cast<int>(args[0].ToInteger());
-#if SKYLANDERS_HAS_CEMU
-        if (core_.available()) {
-            const bool ok = core_.removeFigure(slot);
-            if (ok) {
-                clearPortalSlot(slot);
-                lastPortalError_.clear();
-            } else {
-                lastPortalError_ = "Cemu could not clear the selected portal slot.";
-            }
+        if (embeddedBackendRequested()) {
+            lastPortalError_ = "Embedded backend ready; portal direct integration pending.";
             pushNativeState();
-            return ultralight::JSValue(ok);
+            return ultralight::JSValue(false);
         }
-#endif
         if (running_.processId == 0) {
             lastPortalError_ = "Cemu is not running.";
             pushNativeState();
@@ -1247,6 +1275,24 @@ private:
             file << json;
             return ultralight::JSValue(true);
         } catch (const std::exception&) {
+            return ultralight::JSValue(false);
+        }
+    }
+
+    ultralight::JSValue setCemuBackendMode(const ultralight::JSObject&, const ultralight::JSArgs& args) {
+        if (args.empty() || gameRunning_) {
+            return ultralight::JSValue(false);
+        }
+
+        const auto mode = skylanders::cemuBackendModeFromString(jsValueToUtf8(args[0]));
+        setupConfig_.cemuBackendMode = mode;
+        try {
+            setupConfig_.save(projectRoot_ / "runtime" / "config" / "setup.json");
+            pushNativeState();
+            return ultralight::JSValue(true);
+        } catch (const std::exception& ex) {
+            lastError_ = ex.what();
+            pushNativeState();
             return ultralight::JSValue(false);
         }
     }
@@ -1548,7 +1594,26 @@ private:
         return json.str();
     }
 
+    std::string embeddedStatusJson() const {
+        const auto status = embeddedHost_.status();
+        std::ostringstream json;
+        json << "{";
+        json << "\"available\":" << (status.available ? "true" : "false") << ",";
+        json << "\"configured\":" << (status.configured ? "true" : "false") << ",";
+        json << "\"initialized\":" << (status.initialized ? "true" : "false") << ",";
+        json << "\"titlePrepared\":" << (status.titlePrepared ? "true" : "false") << ",";
+        json << "\"running\":" << (status.running ? "true" : "false") << ",";
+        json << "\"phase\":\"" << jsonEscape(skylanders::embeddedCemuPhaseToString(status.phase)) << "\",";
+        json << "\"fallbackUsed\":" << (status.fallbackUsed ? "true" : "false") << ",";
+        json << "\"fallbackReason\":\"" << jsonEscape(status.fallbackReason) << "\",";
+        json << "\"lastError\":\"" << jsonEscape(status.lastError) << "\"";
+        json << "}";
+        return json.str();
+    }
+
     std::string nativeStateJson() const {
+        const auto selection = backendSelection();
+        const bool embeddedEffective = selection.effective == skylanders::CemuBackendMode::EmbeddedNative;
         std::ostringstream json;
         json << "{";
         json << "\"game\":\"" << jsonEscape(narrow(skylanders::gameIdToString(spec_.game))) << "\",";
@@ -1561,17 +1626,21 @@ private:
         json << "\"keysStatus\":\"" << (keysPresent ? "present" : "missing") << "\",";
         json << "\"titleId\":\"" << (spec_.titleId ? jsonEscape(std::to_string(*spec_.titleId)) : "") << "\",";
         json << "\"region\":\"" << jsonEscape(narrow(spec_.region)) << "\",";
-        json << "\"embeddedCemu\":" << (core_.available() ? "true" : "false") << ",";
+        json << "\"embeddedCemu\":" << (embeddedHost_.status().available ? "true" : "false") << ",";
         json << "\"hasCemu\":" << (cemuResolution_ ? "true" : "false") << ",";
         json << "\"cemuRoot\":\"" << (cemuResolution_ ? jsonEscape(cemuResolution_->cemuRoot.string()) : "") << "\",";
         json << "\"cemuExe\":\"" << (cemuResolution_ ? jsonEscape(cemuResolution_->cemuExe.string()) : "") << "\",";
         json << "\"cemuSource\":\"" << (cemuResolution_ ? jsonEscape(skylanders::CemuLocator::sourceToString(cemuResolution_->source)) : "") << "\",";
-        json << "\"cemuBackendMode\":\"" << jsonEscape(skylanders::cemuBackendModeToString(setupConfig_.cemuBackendMode.value_or(skylanders::CemuBackendMode::BundledExternal))) << "\",";
+        json << "\"cemuBackendMode\":\"" << jsonEscape(skylanders::cemuBackendModeToString(selection.effective)) << "\",";
+        json << "\"requestedCemuBackendMode\":\"" << jsonEscape(skylanders::cemuBackendModeToString(selection.requested)) << "\",";
+        json << "\"backendFallbackUsed\":" << (selection.fallbackUsed ? "true" : "false") << ",";
+        json << "\"backendFallbackReason\":\"" << jsonEscape(selection.fallbackReason) << "\",";
         json << "\"overlayBackendMode\":\"" << jsonEscape(skylanders::overlayBackendModeToString(setupConfig_.overlayBackendMode.value_or(skylanders::OverlayBackendMode::ExternalWindow))) << "\",";
+        json << "\"embeddedStatus\":" << embeddedStatusJson() << ",";
         json << "\"nativeOverlay\":" << nativeOverlay_.nativeStateJson() << ",";
         json << "\"running\":" << (gameRunning_ ? "true" : "false") << ",";
-        json << "\"inputBridgeReady\":" << ((running_.processId != 0 && inputBridge_.ping(running_.processId)) ? "true" : "false") << ",";
-        json << "\"portalReady\":" << (portalReady() ? "true" : "false") << ",";
+        json << "\"inputBridgeReady\":" << ((!embeddedEffective && running_.processId != 0 && inputBridge_.ping(running_.processId)) ? "true" : "false") << ",";
+        json << "\"portalReady\":" << ((!embeddedEffective && portalReady()) ? "true" : "false") << ",";
         json << "\"portalSlots\":" << portalSlotsJson() << ",";
         json << "\"lastPortalError\":\"" << jsonEscape(lastPortalError_) << "\",";
         json << "\"graphicPacks\":" << skylanders::GraphicPackManager::stateToJson(graphicPacks_.loadState()) << ",";

@@ -10,12 +10,12 @@ The project does not include ROMs, keys, or user figure saves.
 
 ## Current Milestone
 
-The active architecture is bundled external Cemu:
+The default architecture is bundled external Cemu:
 
 - Cemu is built from `extern/cemu`.
 - The launcher copies/runs bundled `cemu/Cemu.exe`.
 - The overlay talks to patched bundled Cemu through named pipes.
-- True in-process Cemu is deferred behind `SKYLANDERS_EMBED_CEMU=OFF`.
+- True in-process Cemu is experimental behind `SKYLANDERS_EMBED_CEMU=ON` and currently reaches headless readiness/title-preparation diagnostics only.
 
 This is intentional. The old "embed Cemu fully" path needs deeper Cemu bootstrap/render-host work before it can replace the external executable.
 
@@ -36,7 +36,8 @@ This is intentional. The old "embed Cemu fully" path needs deeper Cemu bootstrap
 - Graphic-pack download/update, selection diagnostics, and non-fatal warnings.
 - Per-game Cemu settings/profile preparation.
 - V1.6 packaging and packaged-output smoke scripts.
-- Experimental V2 backend/native-overlay scaffolding for embedded Cemu work.
+- Experimental V2 backend/native-overlay scaffolding.
+- V2.1 embedded headless bootstrap link/test path and diagnostics.
 
 ## Key Files
 
@@ -61,6 +62,7 @@ This is intentional. The old "embed Cemu fully" path needs deeper Cemu bootstrap
 - `extern/cemu/src/Cafe/OS/libs/nsyshid/SkylandersEnginePortalIpc.*`: Cemu-side portal bridge.
 - `extern/cemu/src/Cafe/OS/libs/nsyshid/SkylandersEngineInputIpc.*`: Cemu-side input bridge.
 - `extern/cemu/src/SkylandersEngineBootstrap.*`: linkable Cemu bootstrap split for V2.1.
+- `extern/cemu/src/SkylandersEngineHeadlessWindowSystem.cpp`: no-GUI window-system shim for embedded readiness.
 
 ## Local Runtime State
 
@@ -82,6 +84,9 @@ cmake --build build --config Release
 ctest --test-dir build -C Release --output-on-failure
 cmake --build build-bundled --config Release
 ctest --test-dir build-bundled -C Release --output-on-failure
+cmake -S . -B build-embedded -DSKYLANDERS_EMBED_CEMU=ON -DSKYLANDERS_BUILD_BUNDLED_CEMU=ON
+cmake --build build-embedded --config Release --target SkylandersEngineTests
+ctest --test-dir build-embedded -C Release --output-on-failure
 ```
 
 Package smoke:
@@ -99,7 +104,7 @@ Remove-Item Env:PATH -ErrorAction SilentlyContinue
 
 ## Recommended Next Step
 
-Run the V1.6 package smoke checklist with real ROM/key/hardware inputs, record the manual results, then advance V2.1 from bootstrap compile-test to an embedded "ready to launch title" smoke path.
+Run the V1.6 package smoke checklist with real ROM/key/hardware inputs, record the manual results, then run the V2.1 embedded manual smoke with `cemuBackendMode` set to `embedded_native`. After that, begin V2.2 launcher-owned render-window work.
 
 ## Documentation Rule
 

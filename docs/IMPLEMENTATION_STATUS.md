@@ -77,7 +77,9 @@ This is the current handoff status for the project.
   - `NativeOverlayRenderer`,
   - `InputRouter`,
   - Cemu `CemuBootstrap` target split from executable startup,
-  - embedded launcher library compile-test.
+  - embedded launcher/test link against headless Cemu bootstrap,
+  - experimental `EmbeddedNative` backend selection,
+  - headless embedded Cemu configuration and title-preparation diagnostics.
 
 ## Still Needed For A Complete V1
 
@@ -92,11 +94,7 @@ This is the current handoff status for the project.
 
 ## Deferred Larger Work
 
-- V2.1 embedded Cemu launch beyond bootstrap initialization.
-- V2.1 full embedded executable/test link cleanup:
-  - remove executable-only Cemu symbol dependencies,
-  - align runtime-library settings with Cemu static dependencies,
-  - avoid pulling wx GUI modules into the embedded backend.
+- V2.1 manual smoke with a real ROM/key pair in `EmbeddedNative` mode.
 - V2.2 launcher-owned Cemu render host.
 - V2.3 Ultralight texture compositing into Cemu's Vulkan frame.
 - V2.4 native backend as the default release path.
@@ -118,5 +116,5 @@ This is the current handoff status for the project.
 1. Run the V1.6 package smoke checklist on a fresh folder with real hardware and record results.
 2. Improve non-XInput hidden-overlay toggle support or clearly scope it as a native-backend feature.
 3. Add automated visual/UI checks for the overlay.
-4. Advance V2.1 from bootstrap compile-test to embedded title preparation smoke test.
+4. Run the V2.1 manual embedded smoke with a real ROM/key pair, then start V2.2 render-host ownership.
 5. Prepare the Cemu patch set for easier long-term maintenance.

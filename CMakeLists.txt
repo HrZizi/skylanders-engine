@@ -74,7 +74,7 @@ if (SKYLANDERS_EMBED_CEMU AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/extern/cemu/CM
         "${CMAKE_CURRENT_SOURCE_DIR}/extern/cemu/src"
     )
 
-    foreach(cemu_target IN ITEMS CemuBootstrap CemuCafe CemuCommon CemuConfig CemuInput CemuAudio CemuUtil CemuComponents)
+    foreach(cemu_target IN ITEMS CemuBootstrap)
         if (TARGET ${cemu_target})
             target_link_libraries(skylanders_launcher PUBLIC ${cemu_target})
         endif()
@@ -96,6 +96,11 @@ add_executable(SkylandersEngineTests
 
 target_link_libraries(SkylandersEngineTests PRIVATE skylanders_launcher)
 target_compile_features(SkylandersEngineTests PRIVATE cxx_std_20)
+
+if (MSVC AND SKYLANDERS_EMBED_CEMU)
+    set_property(TARGET skylanders_launcher SkylandersEngine SkylandersEngineTests
+        PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
 
 add_test(NAME SkylandersEngineTests COMMAND SkylandersEngineTests)
 

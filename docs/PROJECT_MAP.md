@@ -155,7 +155,7 @@ Files:
 - `include/skylanders/EmbeddedCemuHost.h`
 - `src/EmbeddedCemuHost.cpp`
 
-Experimental V2.1 host for embedded Cemu. It wraps Cemu bootstrap initialization, title launch, shutdown, and future direct portal/input calls. In non-embedded builds it reports unavailable.
+Experimental V2.1 host for embedded Cemu. It wraps Cemu bootstrap configuration, initialization, headless title preparation, shutdown, and future direct portal/input calls. In non-embedded builds it reports unavailable. In embedded builds it stops at `TitlePrepared`; visible gameplay/render ownership begins in V2.2.
 
 ### `NativeOverlayRenderer`
 
@@ -184,6 +184,7 @@ Submodule:
 Important patched areas:
 
 - `src/SkylandersEngineBootstrap.*`
+- `src/SkylandersEngineHeadlessWindowSystem.cpp`
 - `src/CMakeLists.txt` `CemuBootstrap` target
 - `src/Cafe/OS/libs/nsyshid/SkylandersEnginePortalIpc.*`
 - `src/Cafe/OS/libs/nsyshid/SkylandersEngineInputIpc.*`
@@ -193,7 +194,7 @@ Important patched areas:
 
 These provide the bundled-only portal and input IPC used by the overlay.
 
-`CemuBootstrap` is the first V2 split from Cemu's executable-only startup path. It exposes `SkylandersEngineBootstrapInitialize()` and `SkylandersEngineBootstrapShutdown()` so the launcher can link against Cemu initialization in experimental embedded builds.
+`CemuBootstrap` is the first V2 split from Cemu's executable-only startup path. It exposes `SkylandersEngineBootstrapConfigure()`, `SkylandersEngineBootstrapInitialize()`, and `SkylandersEngineBootstrapShutdown()` so the launcher can link against Cemu initialization in experimental embedded builds without wx GUI linkage. The headless window-system shim satisfies Cemu subsystems that still query window state before V2.2 provides a real launcher-owned HWND.
 
 ## Frontend Overlay
 

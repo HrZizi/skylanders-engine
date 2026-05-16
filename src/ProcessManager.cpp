@@ -455,6 +455,22 @@ CemuPreparationReport ProcessManager::prepareForLaunchDiagnostics(const GameLaun
     return lastPreparationReport_;
 }
 
+CemuPreparationReport ProcessManager::prepareForEmbeddedDiagnostics(const GameLaunchSpec& spec) {
+    if (spec.game == GameId::Unknown) {
+        throw std::invalid_argument("launch spec has no game id");
+    }
+    if (spec.gamePath.empty()) {
+        throw std::invalid_argument("launch spec is missing the Wii U game path");
+    }
+    if (!spec.titleId) {
+        throw std::invalid_argument("launch spec is missing the Wii U title id");
+    }
+    validateCemuLayout();
+    lastPreparationReport_ = prepareCemuEnvironment(spec);
+    persistPreparationReport(lastPreparationReport_);
+    return lastPreparationReport_;
+}
+
 const CemuPreparationReport& ProcessManager::lastPreparationReport() const {
     return lastPreparationReport_;
 }
@@ -463,6 +479,20 @@ void ProcessManager::validateCemuInstall() const {
     const auto cemuExe = config_.cemuRoot / L"Cemu.exe";
     if (!std::filesystem::exists(cemuExe)) {
         throw std::runtime_error("Cemu.exe was not found at " + cemuExe.string());
+    }
+}
+
+void ProcessManager::validateCemuLayout() const {
+    if (config_.cemuRoot.empty()) {
+        throw std::runtime_error("Cemu root is not configured.");
+    }
+    const auto resources = config_.cemuRoot / L"resources";
+    if (!std::filesystem::exists(resources)) {
+        throw std::runtime_error("Cemu resources folder was not found at " + resources.string());
+    }
+    const auto gameProfiles = config_.cemuRoot / L"gameProfiles";
+    if (!std::filesystem::exists(gameProfiles)) {
+        throw std::runtime_error("Cemu gameProfiles folder was not found at " + gameProfiles.string());
     }
 }
 

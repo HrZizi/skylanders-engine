@@ -14,9 +14,9 @@ The launcher now has shared mode types and experimental host interfaces:
 
 `runtime/config/setup.json` may persist backend selections, but the default remains the V1 external path.
 
-The Cemu submodule also exposes a `CemuBootstrap` target with `SkylandersEngineBootstrapInitialize()` and `SkylandersEngineBootstrapShutdown()`. This is the first linkable split from Cemu's executable-only startup path.
+The Cemu submodule also exposes a headless `CemuBootstrap` target with `SkylandersEngineBootstrapConfigure()`, `SkylandersEngineBootstrapInitialize()`, and `SkylandersEngineBootstrapShutdown()`. This is the first linkable split from Cemu's executable-only startup path.
 
-Current verification note: `CemuBootstrap` and the embedded `skylanders_launcher` library compile. The full embedded executable/test link is still a V2.1 task because upstream Cemu libraries currently pull executable-only symbols and static-runtime dependencies that need to be separated cleanly.
+Current verification note: `SKYLANDERS_EMBED_CEMU=ON` configures and links `SkylandersEngineTests` against `CemuBootstrap` without pulling wx GUI libraries into the embedded test executable. The V2.1 test suite passes. The runtime path is still headless readiness only; V2.2 owns visible rendering.
 
 ## V2.1 Embedded Cemu Bootstrap
 
@@ -26,15 +26,17 @@ Work:
 
 - keep bundled external Cemu as the default fallback,
 - make `SKYLANDERS_EMBED_CEMU=ON` build the launcher against `CemuBootstrap`,
-- move more executable-only initialization behind linkable bootstrap APIs as needed,
+- configure Cemu paths through `SkylandersEngineBootstrapConfigure()`,
 - have `EmbeddedCemuHost` own initialization, MLC/config paths, profile loading, graphic packs, audio/input init, and title preparation,
-- support repeated init/shutdown in one process.
+- support repeated init/shutdown after partial setup.
 
 Acceptance:
 
-- embedded build configures and links,
-- Cemu initialization reaches a controlled "ready to launch title" state,
+- embedded build configures, links, and runs the test suite,
+- Cemu initialization can reach a controlled "ready to launch title" state through `EmbeddedCemuHost::prepareTitle()`,
 - no external `Cemu.exe` process is started for the init smoke test.
+
+V2.1 intentionally reports `portalReady=false` and `inputBridgeReady=false` for `EmbeddedNative`; direct portal and input integration move to V2.4 after the render host exists.
 
 ## V2.2 Native Host Window And Render Ownership
 

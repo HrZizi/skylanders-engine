@@ -10,7 +10,7 @@ The project is in a playable external-Cemu milestone:
 
 - Six Wii U Skylanders stubs are supported: Spyro's Adventure, Giants, Swap Force, Trap Team, SuperChargers, and Imaginators.
 - The preferred emulator backend is the bundled `extern/cemu` submodule built as an external `Cemu.exe`.
-- True in-process embedded Cemu is still reserved behind `SKYLANDERS_EMBED_CEMU` and is not the default.
+- True in-process embedded Cemu is experimental behind `SKYLANDERS_EMBED_CEMU` and is not the default.
 - Ultralight starts hidden, boots Cemu automatically, and opens as an in-game overlay with `Start+Back` or `F1`.
 - ROM discovery, key setup, portal figure creation/loading, controller mapping, and graphic-pack diagnostics are implemented.
 
@@ -121,6 +121,16 @@ See [docs/V1_6_RELEASE_CHECKLIST.md](docs/V1_6_RELEASE_CHECKLIST.md) for the ful
 ## Native Overlay Roadmap
 
 The V2 path is staged behind experimental backend modes. The current default remains bundled external Cemu with an external Ultralight overlay. The native path is documented in [docs/V2_NATIVE_OVERLAY_ROADMAP.md](docs/V2_NATIVE_OVERLAY_ROADMAP.md): V2.1 embedded bootstrap, V2.2 launcher-owned render host, V2.3 Ultralight composited into Vulkan, and V2.4 native backend as the default.
+
+For V2.1 development, configure:
+
+```powershell
+cmake -S . -B build-embedded -DSKYLANDERS_EMBED_CEMU=ON -DSKYLANDERS_BUILD_BUNDLED_CEMU=ON
+cmake --build build-embedded --config Release --target SkylandersEngineTests
+ctest --test-dir build-embedded -C Release --output-on-failure
+```
+
+`EmbeddedNative` currently prepares Cemu headlessly and reports diagnostics; it does not own a render window or provide direct portal/input integration yet.
 
 ## Documentation Rules
 

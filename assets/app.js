@@ -396,6 +396,7 @@ function renderDiagnostics() {
   }
 
   if (launch) {
+    const embedded = nativeState.embeddedStatus || {};
     const lines = [
       `Cemu: ${nativeState.cemuSource || "unresolved"} (${nativeState.cemuBackendMode || "bundled_external"})`,
       `ROM: ${nativeState.hasGamePath ? "resolved" : "missing"}`,
@@ -403,6 +404,12 @@ function renderDiagnostics() {
       `Portal bridge: ${nativeState.portalReady ? "ready" : "waiting"}`,
       `Input bridge: ${nativeState.inputBridgeReady ? "ready" : "waiting"}`
     ];
+    if (nativeState.cemuBackendMode === "embedded_native") {
+      lines.push(`Embedded: ${embedded.phase || "unavailable"}`);
+      if (embedded.lastError) {
+        lines.push(`Embedded note: ${embedded.lastError}`);
+      }
+    }
     if (Array.isArray(warnings) && warnings.length > 0) {
       lines.push(`Warnings: ${warnings.length}`);
     }

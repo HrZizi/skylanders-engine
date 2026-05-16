@@ -78,12 +78,14 @@ public:
     RunningProcess launchFromStub(const std::filesystem::path& stubPath);
     RunningProcess launch(const GameLaunchSpec& spec);
     CemuPreparationReport prepareForLaunchDiagnostics(const GameLaunchSpec& spec);
+    CemuPreparationReport prepareForEmbeddedDiagnostics(const GameLaunchSpec& spec);
     const CemuPreparationReport& lastPreparationReport() const;
 
     static std::string preparationReportJson(const CemuPreparationReport& report);
 
 private:
     void validateCemuInstall() const;
+    void validateCemuLayout() const;
     CemuPreparationReport prepareCemuEnvironment(const GameLaunchSpec& spec) const;
     void applyGlobalCemuSettings(const GameLaunchSpec& spec, CemuPreparationReport& report) const;
     void applyGameProfileOverrides(const GameLaunchSpec& spec, CemuPreparationReport& report) const;

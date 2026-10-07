@@ -90,6 +90,16 @@ assets/characters/renders/_review/**
 !assets/characters/renders/_review/
 !assets/characters/renders/_review/README.md
 
+# Unreviewed per-game icon/render drops (e.g. wiki candidates) stay local
+assets/characters/icons/*
+!assets/characters/icons/README.md
+!assets/characters/icons/_review/
+!assets/characters/icons/_review/README.md
+assets/characters/renders/*
+!assets/characters/renders/README.md
+!assets/characters/renders/_review/
+!assets/characters/renders/_review/README.md
+
 # Candidate character icons are reviewed before assets are committed
 assets/characters/icons/_review/**
 !assets/characters/icons/_review/

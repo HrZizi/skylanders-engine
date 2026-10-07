@@ -1,6 +1,15 @@
 # Skylanders Engine
 
+[![Platform: Windows](https://img.shields.io/badge/platform-Windows-blue.svg)](#first-time-setup)
+[![Language: C++](https://img.shields.io/badge/language-C++-purple.svg)](#repository-layout)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Skylanders Engine is a Windows launcher/runtime that makes the Wii U Skylanders games feel closer to native PC releases. It wraps a project-owned Cemu build, resolves user-supplied game files and keys, applies per-game emulator settings, and exposes an Ultralight overlay for portal figure placement, controls, diagnostics, and setup.
+
+> **Fan project, no affiliation.** This is an unofficial community project.
+> It is not affiliated with or endorsed by Activision, Toys for Bob,
+> Microsoft, Nintendo, or the Cemu maintainers. Skylanders and all related
+> characters, titles, and artwork are trademarks of their respective owners.
 
 The project does not ship copyrighted game files, title keys, or generated figure saves. Those stay in ignored local folders.
 
@@ -31,6 +40,42 @@ See [docs/IMPLEMENTATION_STATUS.md](docs/IMPLEMENTATION_STATUS.md) for the detai
 - `sdks/ultralight/`: local Ultralight SDK. Ignored.
 
 See [docs/PROJECT_MAP.md](docs/PROJECT_MAP.md) for feature ownership and data flows.
+
+## Architecture
+
+```mermaid
+flowchart TB
+    subgraph LAUNCHER["Skylanders Engine (C++)"]
+        STUB["Per-game stub (.exe)"]
+        LOC["RomLocator + CemuLocator"]
+        PROC["ProcessManager"]
+        EMB["EmbeddedCemuHost\n(experimental)"]
+        PORTAL["PortalBridge + FigureStore"]
+        INPUT["InputRouter + InputBridge"]
+        OVERLAY["NativeOverlayRenderer"]
+    end
+    subgraph UI["Ultralight overlay (HTML/CSS/JS)"]
+        APP["assets/app.js"]
+    end
+    subgraph EXT["External / user-supplied"]
+        CEMU["Cemu (bundled build\nfrom extern/cemu)"]
+        ROMS["roms/ (your dumps)"]
+        KEYS["keys/keys.txt (your keys)"]
+    end
+    STUB --> LOC --> PROC --> CEMU
+    PROC <--> OVERLAY <--> APP
+    PORTAL --> PROC
+    INPUT --> PROC
+    EMB -.->|"SKYLANDERS_EMBED_CEMU\n(not default)"| CEMU
+    ROMS --> LOC
+    KEYS --> PROC
+```
+
+Each supported title gets a tiny stub executable; the stub name selects the
+game, the launcher resolves the ROM and keys, prepares Cemu settings and
+profiles, and supervises the emulator process. The overlay (toggled with
+`Start+Back` or `F1`) talks to the launcher for portal placement, controls,
+and diagnostics.
 
 ## First-Time Setup
 
@@ -137,3 +182,28 @@ ctest --test-dir build-embedded -C Release --output-on-failure
 Documentation is part of the implementation. If a change modifies runtime behavior, public bridge APIs, config file formats, Cemu patch behavior, asset layout, or setup requirements, update the relevant docs in the same commit.
 
 Use [docs/DOCUMENTATION_MAINTENANCE.md](docs/DOCUMENTATION_MAINTENANCE.md) as the maintenance checklist.
+
+## Third-party components
+
+| Component | License | How included |
+|---|---|---|
+| [Cemu](https://github.com/cemu-project/Cemu) (Wii U emulator) | [MPL-2.0](https://www.mozilla.org/en-US/MPL/2.0/) | git submodule at `extern/cemu`, built from source — never shipped as a binary from this repo |
+| [Ultralight](https://ultralight-ux.github.io/) (HTML/GPU UI toolkit) | Proprietary (free/paid tiers per vendor terms) | **local-only SDK drop** at `sdks/ultralight/` (git-ignored); you must obtain it yourself |
+| Game logos under `assets/game-logos/` | Trademarks of their respective owners | small identification badges for the launcher UI in this non-commercial fan project |
+
+`roms/`, `keys/keys.txt`, `figures/*.sky`, `runtime/`, and `sdks/` are
+never part of this repository: only their placeholder READMEs are tracked.
+
+## Contributing
+
+Small fan project: open an issue describing your game build and setup
+before changing emulator-facing behaviour, keep per-game quirks behind
+catalog data rather than hard-coding them, and update the docs listed in
+[DOCUMENTATION_MAINTENANCE.md](docs/DOCUMENTATION_MAINTENANCE.md) in the
+same commit.
+
+## License
+
+My original launcher/runtime code in this repository is MIT-licensed —
+see [LICENSE](LICENSE). Cemu (submodule) retains its MPL-2.0 license;
+Ultralight is a separately obtained proprietary SDK and is not included.
